@@ -1,19 +1,16 @@
 /* Global Variables with our values */
 :root {
-  --main-color: #ffff00;
-  --secondary-color: #000;
-  --body-color: #eeeeee;
-  --color-white: #fff;
-  --color-checked: #ffdf00;
+  --main-color: #F3601D;
+  --text-color: #707070;
+  --body-color: #F8F8F8;
+  --white-color: #fff;
   --fonts-montserrat: "Montserrat", sans-serif;
-  --transparent-main-color: rgba(255, 255, 0, 0.94);
 }
 
 html,
 body {
   margin: 0px;
   padding: 0px;
-  background-color: var(--body-color);
   height: 100%;
   font-family: var(--fonts-montserrat);
   scroll-behavior: smooth;
@@ -22,3 +19,344 @@ body {
 * {
   box-sizing: border-box;
 }
+
+h2 {
+  text-align: center;
+  padding: 12px;
+  color: var(--text-color);
+  background-color: var(--text-color);
+  display: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+h4 {
+  font-size: 15px;
+}
+
+/* Style for the Hamburger & the Navigation Bar */
+/*============ Navbar ============*/
+
+#navbar {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  line-height: 1px;
+  width: 100vw;
+  z-index: 10;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-wrapper {
+  text-align: right;
+  width: 100%;
+  position: fixed;
+  float: right;
+  z-index: -1;
+}
+
+#navbar ul {
+  padding-top: 10px;
+  padding-right: 50px;
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  transition: transform 0.5s ease-out;
+}
+
+@media (max-width: 880px) {
+  #navbar ul {
+    display: none;
+  }
+}
+
+#navbar li {
+  display: inline-block;
+}
+
+#navbar li a {
+  color: var(--text-color);
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin: 0 10px;
+  padding: 0 4px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #777777;
+  transition: all 1s ease;
+}
+
+/* Animated Bottom Line */
+
+#navbar li a:before,
+#navbar li a:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -12px;
+  background: var(--text-color);
+}
+
+#navbar li a:before {
+  left: 0;
+  transition: 0.5s;
+}
+
+#navbar li a:after {
+  background: var(--text-color);
+  right: 0;
+}
+
+#navbar li a:hover:before,
+#navbar li a.active:before {
+  background: var(--text-color);
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+#navbar li a:hover:after,
+#navbar li a.active:after {
+  background: transparent;
+  width: 100%;
+}
+
+/*======= Responsive Mobile Menu========*/
+
+.overlay-menu {
+  background: var(--white-color);
+  color: var(--text-color);
+  justify-content: center;
+  position: fixed;
+  top: 61px;
+  padding-left: 40%;
+  padding-top: 30%;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease-out;
+  z-index: 3;
+}
+
+.overlay-menu ul,
+.overlay-menu li {
+  display: block;
+  position: relative;
+  width: auto;
+}
+
+.overlay-menu li a {
+  display: block;
+  font-size: 18px;
+  padding: 10px 0;
+  text-align: left;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Animated Bottom Line */
+
+.overlay-menu li a:before,
+.overlay-menu li a:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -1px;
+  background: var(--white-color);
+}
+
+.overlay-menu li a:before {
+  left: 0;
+  transition: 0.5s;
+}
+
+.overlay-menu li a:after {
+  background: var(--text-color);
+  right: 0;
+}
+
+.overlay-menu li a:hover:before,
+.overlay-menu li a.active:before {
+  background: var(--text-color);
+  width: 70%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.overlay-menu li a:hover:after,
+.overlay-menu li a.active:after {
+  background: transparent;
+  width: 100%;
+}
+
+/* Logo */
+
+#logo {
+  margin-left: 50px;
+  margin-bottom: 6px;
+  height: 43px;
+  float: left;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ///////// Button top ///////// */
+#Btn-top {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 20px;
+  z-index: 99;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 13px;
+  border-radius: 4px;
+}
+
+#Btn-top:hover {
+  background-color: var(--text-color);
+  color: var(--main-color);
+  box-shadow: 4px 8px 13px #4a4a4a;
+}
+
+
+/* Media Queries for Responsive Web Design */
+/*  Screens 320px - 1000px */
+@media only screen and (min-width: 320px) and (max-width: 880px) {
+	/* The style for the Logo */
+	#logo {
+		margin-left: 15px;
+	}
+	.menuIcon {
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		right: 15px;
+		top: 20px;
+		height: 23px;
+		width: 27px;
+		z-index: 12;
+	}
+	/* Icon Bars */
+	.icon-bars {
+		background: var(--text-color);
+		position: absolute;
+		left: 1px;
+		top: 45%;
+		height: 2px;
+		width: 20px;
+		transition: 0.4s;
+	}
+	.icon-bars::before {
+		background: var(--text-color);
+		content: '';
+		position: absolute;
+		left: 0;
+		top: -8px;
+		height: 2px;
+		width: 20px;
+		transition: 0.3s width 0.4s;
+	}
+	.icon-bars::after {
+		margin-top: 0px;
+		background: var(--text-color);
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -8px;
+		height: 2px;
+		width: 20px;
+		transition: 0.3s width 0.4s;
+	}
+	/* Bars Shadows */
+	.icon-bars.overlay {
+		background: var(--text-color);
+		width: 20px;
+		animation: middleBar 3s infinite 0.5s;
+	}
+	@keyframes middleBar {
+		0% {
+			width: 0px
+		}
+		50% {
+			width: 20px
+		}
+		100% {
+			width: 0px
+		}
+	}
+	.icon-bars.overlay::before {
+		background: var(--text-color);
+		width: 10px;
+		animation: topBar 3s infinite 0.2s;
+	}
+	@keyframes topBar {
+		0% {
+			width: 0px
+		}
+		50% {
+			width: 10px
+		}
+		100% {
+			width: 0px
+		}
+	}
+	.icon-bars.overlay::after {
+		background: var(--secondary-color);
+		width: 15px;
+		animation: bottomBar 3s infinite 1s;
+	}
+	@keyframes bottomBar {
+		0% {
+			width: 0px
+		}
+		50% {
+			width: 15px
+		}
+		100% {
+			width: 0px
+		}
+	}
+	/* Toggle Menu Icon */
+	.menuIcon {
+		position: fixed;
+	}
+	.menuIcon.toggle .icon-bars {
+		top: 5px;
+		transform: translate3d(0, 5px, 0) rotate(135deg);
+		transition-delay: 0.1s;
+		transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+	.menuIcon.toggle .icon-bars::before {
+		top: 0;
+		transition-delay: 0.1s;
+		opacity: 0;
+	}
+	.menuIcon.toggle .icon-bars::after {
+		top: 10px;
+		transform: translate3d(0, -10px, 0) rotate(-270deg);
+		transition-delay: 0.1s;
+		transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+	.menuIcon.toggle .icon-bars.overlay {
+		width: 20px;
+		opacity: 0;
+		transition: all 0s ease 0s;
+	}
+
+	/* Modal Content */

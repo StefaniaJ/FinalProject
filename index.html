@@ -11,6 +11,11 @@
       href="images/Crunch-UN-logo-orange.png"
       sizes="32x32"
     />
+    <!-- Montserrat Google Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome Icons -->
     <link
@@ -25,6 +30,55 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header area -->
+    <header id="header">
+      <!-- Navigation Bar -->
+      <nav id="navbar" class="navbarbox">
+        <!-- Logo with a link to the Home page -->
+        <a href="index.html"
+          ><img
+            src="images/Crunch-logo-orange.png"
+            id="logo"
+            alt="The logo of Crunch agency"
+        /></a>
+
+        <div class="nav-wrapper">
+          <!-- Navbar Links -->
+          <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Menu Icon -->
+    <div class="menuIcon">
+      <span class="icon icon-bars"></span>
+      <span class="icon icon-bars overlay"></span>
+    </div>
+
+    <!-- Overlay Menu -->
+    <div class="overlay-menu">
+      <ul id="menu-mobile">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <main></main>
+    <footer></footer>
+    <!--Button go to top-->
+    <button onclick="topFunction()" id="Btn-top" title="Go to top">
+      <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
+    </button>
     <script src="script.js"></script>
   </body>
 </html>
