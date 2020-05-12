@@ -1,0 +1,24 @@
+/* Global Variables with our values */
+:root {
+  --main-color: #ffff00;
+  --secondary-color: #000;
+  --body-color: #eeeeee;
+  --color-white: #fff;
+  --color-checked: #ffdf00;
+  --fonts-montserrat: "Montserrat", sans-serif;
+  --transparent-main-color: rgba(255, 255, 0, 0.94);
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--body-color);
+  height: 100%;
+  font-family: var(--fonts-montserrat);
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
