@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crunch</title>
+    <meta name="description" content="Final Project - Multimedia Design" />
+    <meta name="title" content="Final Project - Multimedia Design" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/Crunch-UN-logo-orange.png"
+      sizes="32x32"
+    />
+
+    <!-- Montserrat Google Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <!-- Body area -->
+
+  <body>
+    <!-- Header area -->
+    <header id="header">
+      <!-- Navigation Bar -->
+      <nav id="navbar" class="navbarbox">
+        <!-- Logo with a link to the Home page -->
+        <a href="index.html"
+          ><img
+            src="images/Crunch-logo-orange.png"
+            id="logo"
+            alt="The logo of Crunch agency"
+        /></a>
+
+        <div class="nav-wrapper">
+          <!-- Navbar Links -->
+          <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Menu Icon -->
+    <div class="menuIcon">
+      <span class="icon icon-bars"></span>
+      <span class="icon icon-bars overlay"></span>
+    </div>
+
+    <!-- Overlay Menu -->
+    <div class="overlay-menu">
+      <ul id="menu-mobile">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <main id="main-grid">
+      <div class="buttons-wrapper">
+        <!-- Navbar Links -->
+        <ul id="buttons-menu">
+          <li><a id="all">All</a></li>
+
+          <!-- The content is inserted Dynamically using JavaScript -->
+        </ul>
+      </div>
+      <!-- The rest of the content is inserted Dynamically using JavaScript -->
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <!-- The template for each reference  -->
+    <template id="references">
+      <article class="card">
+        <img class="card-img" src="IMG" style="width: 100%;" />
+        <h2 class="title">Company title</h2>
+        <p class="description">Description</p>
+        <button class="link-btn">See the project</button>
+      </article>
+    </template>
+
+    <!--Button go to top-->
+    <button onclick="topFunction()" id="Btn-top" title="Go to top">
+      <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
