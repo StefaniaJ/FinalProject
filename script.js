@@ -59,3 +59,43 @@ function scroll() {
 function topFunction() {
   document.documentElement.scrollTop = 0;
 }
+
+// References page
+
+// Fetch data from  Google Sheets as JSON for Crunch Website
+
+// Strings Constants
+
+const LOADING_IMAGE = "images/loading.gif";
+const IMG_WEBSITES = "url('images/cogwheel (1).png')";
+const IMG_GRAPHICS = "url('images/cogwheel (1).png')";
+
+// The googleSheet link
+const GOOGLE_SHEET =
+  "https://spreadsheets.google.com/feeds/list/2PACX-1vRNdrohwhE1eU2-r6haOTKxhQPu9mJ89H-KM08YAgDPDwqVqj7BLNwS4ic2d2V3FX3XF8sgWJdBcv9U/od6/public/values?alt=json";
+
+// The main HTML Element and the template
+const main = document.querySelector(".main-references");
+const template = document.querySelector("#template-references").content;
+
+// The menu
+const menu = document.getElementById("buttons-wrapper");
+
+// Run this function with 1 second delay
+// adds-removes the active class on the menu items
+setTimeout(function runDelay() {
+  const items = menu.querySelectorAll("div");
+
+  // Initialize the active class on the first menu item
+  items[0].classList.add("active");
+
+  // Loop through the buttons and add the active class to the current/clicked button
+  for (let i = 0; i < items.length; i++) {
+    // desktop menu
+    items[i].addEventListener("click", function () {
+      let current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += "active";
+    });
+  }
+}, 1000);

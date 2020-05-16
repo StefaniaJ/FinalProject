@@ -81,15 +81,32 @@
     </div>
 
     <!-- Main content -->
-    <main id="main-grid">
-      <div class="buttons-wrapper">
-        <!-- Navbar Links -->
-        <ul id="buttons-menu">
-          <li><a id="all">All</a></li>
+    <main id="main-grid" class="main-references">
+      <!-- Hero section -->
+      <section class="hero-section">
+        <h1>References</h1>
+      </section>
 
+      <section class="buttons">
+        <div class="buttons-wrapper" id="buttons-wrapper">
+          <div class="buttons-menu">
+            <img src="images/cogwheel (1).png" alt="All references" />
+            <p id="all">All</p>
+          </div>
+
+          <div class="buttons-menu">
+            <img src="images/cogwheel (1).png" alt="All references" />
+            <p id="all">Websites</p>
+          </div>
+
+          <div class="buttons-menu">
+            <img src="images/cogwheel (1).png" alt="All references" />
+            <p id="all">Graphics</p>
+          </div>
           <!-- The content is inserted Dynamically using JavaScript -->
-        </ul>
-      </div>
+        </div>
+      </section>
+
       <!-- The rest of the content is inserted Dynamically using JavaScript -->
     </main>
 
@@ -97,7 +114,7 @@
     <footer></footer>
 
     <!-- The template for each reference  -->
-    <template id="references">
+    <template id="template-references">
       <article class="card">
         <img class="card-img" src="IMG" style="width: 100%;" />
         <h2 class="title">Company title</h2>
