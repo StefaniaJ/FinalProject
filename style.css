@@ -416,7 +416,7 @@ h4 {
   transition: all 1s ease;
 }
 
-section {
+#references-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 10px;
