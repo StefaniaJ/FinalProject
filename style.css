@@ -20,6 +20,28 @@ body {
   box-sizing: border-box;
 }
 
+.body-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
 h2 {
   text-align: center;
   padding: 12px;
@@ -34,6 +56,22 @@ h4 {
   font-size: 15px;
 }
 
+footer {
+  background-color: var(--body-color);
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+#logo-footer {
+  margin-bottom: 6px;
+  height: 43px;
+  margin-top: 8px;
+  position: relative;
+}
+
+#internship-label {
+  width: 100px;
+}
 /* Style for the Hamburger & the Navigation Bar */
 /*============ Navbar ============*/
 
@@ -236,7 +274,7 @@ h4 {
 }
 
 /* Media Queries for Responsive Web Design */
-/*  Screens 320px - 1000px */
+/*  Screens 320px - 880px */
 @media only screen and (min-width: 320px) and (max-width: 880px) {
   /* The style for the Logo */
   #logo {
@@ -416,7 +454,17 @@ h4 {
   transition: all 1s ease;
 }
 
+.btn:hover {
+  background-color: rebeccapurple;
+}
+
+.btn.active {
+  background-color: rebeccapurple;
+  transition: all 1s ease;
+}
+
 #references-wrapper {
+  margin-top: 80px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 10px;

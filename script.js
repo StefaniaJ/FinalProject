@@ -1,3 +1,88 @@
+"use strict";
+
+window.addEventListener("DOMContentLoaded", start);
+
+// References page
+
+// const LOADING_IMAGE = "images/loading.gif";
+const main = document.querySelector("#references-wrapper");
+const template = document.querySelector("#template-references").content;
+const menu = document.getElementById("buttons-wrapper");
+const allLink = document.querySelector("#all");
+const websitesLink = document.querySelector("#websites");
+const graphicsLink = document.querySelector("#graphics");
+const link =
+  "https://spreadsheets.google.com/feeds/list/1o1okTGFAMCRxodaTFQbERyFNYnITnpmdGpbW62YnBCU/od6/public/values?alt=json";
+
+// Fetch data from Google Sheets as JSON for Crunch Website
+
+// function to fetch the references list
+
+function start() {}
+loadJSON(link);
+
+function loadJSON(link) {
+  fetch(link)
+    .then((e) => e.json())
+    .then((data) => data.feed.entry.forEach(showData));
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+}
+
+function showData(data) {
+  const clone = template.cloneNode("true");
+  console.log(data);
+  clone.querySelector(".title").textContent = data.gsx$category.$t;
+  clone.querySelector(".description").textContent = data.gsx$description.$t;
+  const img = data.gsx$image.$t;
+  clone
+    .querySelector(".card-img")
+    .setAttribute("src", "../images/" + img + ".jpg");
+  clone.querySelector(".link-btn").href = data.gsx$url.$t;
+
+  main.appendChild(clone);
+}
+// loadJSON(link);
+
+// Filter Websites
+websitesLink.addEventListener("click", () => {
+  main.innerHTML = "";
+  fetch(link)
+    .then((e) => e.json())
+    .then((data) =>
+      data.feed.entry
+        .filter((data) => data.gsx$category.$t == "websites")
+        .forEach(showData)
+    );
+});
+
+// Filter Graphics
+graphicsLink.addEventListener("click", () => {
+  main.innerHTML = "";
+  fetch(link)
+    .then((e) => e.json())
+    .then((data) =>
+      data.feed.entry
+        .filter((data) => data.gsx$category.$t == "graphics")
+        .forEach(showData)
+    );
+});
+
+allLink.addEventListener("click", () => {
+  main.innerHTML = "";
+  loadJSON(link);
+});
+
+// Add active class to the current button (highlight it)
+const items = menu.querySelectorAll(".btn");
+for (let i = 0; i < items.length; i++) {
+  items[i].addEventListener("click", function () {
+    let current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
 // Navigation
 // Responsive Toggle Navigation =============================================
 let menuIcon = document.querySelector(".menuIcon");
@@ -59,61 +144,3 @@ function scroll() {
 function topFunction() {
   document.documentElement.scrollTop = 0;
 }
-
-// References page
-
-// Fetch data from Google Sheets as JSON for Crunch Website
-
-// const LOADING_IMAGE = "images/loading.gif";
-
-// The main HTML Element and the template
-const main = document.querySelector("#references-wrapper");
-const template = document.querySelector("#template-references").content;
-// The menu
-const menu = document.getElementById("buttons-wrapper");
-const allLink = document.querySelector("#all");
-const websitesLink = document.querySelector("#websites");
-const graphicsLink = document.querySelector("#graphics");
-
-// The googleSheet link
-const link =
-  "https://spreadsheets.google.com/feeds/list/1o1okTGFAMCRxodaTFQbERyFNYnITnpmdGpbW62YnBCU/od6/public/values?alt=json";
-
-// function to fetch the references list
-
-function loadJSON(link) {
-  fetch(link)
-    .then((e) => e.json())
-    .then((data) => data.feed.entry.forEach(showData));
-}
-
-function showData(data) {
-  const clone = template.cloneNode("true");
-  clone.querySelector(".title").textContent = data.gsx$name.$t;
-  clone.querySelector(".description").textContent = data.gsx$description.$t;
-  const img = data.gsx$image.$t;
-  clone
-    .querySelector(".card-img")
-    .setAttribute("src", "../images/" + img + ".jpg");
-  main.appendChild(clone);
-}
-loadJSON(link);
-
-// Run this function with 1 second delay
-// adds-removes the active class on the menu items
-setTimeout(function runDelay() {
-  const items = menu.querySelectorAll("div");
-
-  // Initialize the active class on the first menu item
-  items[0].classList.add("active");
-
-  // Loop through the buttons and add the active class to the current/clicked button
-  for (let i = 0; i < items.length; i++) {
-    // desktop menu
-    items[i].addEventListener("click", function () {
-      let current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace("active", "");
-      this.className += "active";
-    });
-  }
-}, 1000);

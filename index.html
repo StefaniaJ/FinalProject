@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Final Project - Multimedia Design" />
     <title>Final Exam</title>
-    <link rel="icon" type="image/png" href="images/Crunch-UN-logo-orange.png" sizes="32x32" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/Crunch-UN-logo-orange.png"
+      sizes="32x32"
+    />
 
     <!-- Montserrat Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -20,50 +34,98 @@
 
   <!-- Body area -->
   <body>
-    <!-- Header area -->
-    <header id="header">
-      <!-- Navigation Bar -->
-      <nav id="navbar" class="navbarbox">
-        <!-- Logo with a link to the Home page -->
-        <a href="index.html" ><img src="images/Crunch-logo-orange.png" id="logo" alt="The logo of Crunch agency" /></a>
+    <div class="body-wrapper">
+      <!-- Header area -->
+      <header id="header">
+        <!-- Navigation Bar -->
+        <nav id="navbar" class="navbarbox">
+          <!-- Logo with a link to the Home page -->
+          <a href="index.html"
+            ><img
+              src="images/Crunch-logo-orange.png"
+              id="logo"
+              alt="The logo of Crunch agency"
+          /></a>
 
-        <div class="nav-wrapper">
-          <!-- Navbar Links -->
-          <ul id="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="references.html">References</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+          <div class="nav-wrapper">
+            <!-- Navbar Links -->
+            <ul id="menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="references.html">References</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Menu Icon -->
+      <div class="menuIcon">
+        <span class="icon icon-bars"></span>
+        <span class="icon icon-bars overlay"></span>
+      </div>
+
+      <!-- Overlay Menu -->
+      <div class="overlay-menu">
+        <ul id="menu-mobile">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <main></main>
+      <footer>
+        <div id="col1">
+          <a href="index.html"
+            ><img
+              src="images/Crunch-logo-orange.png"
+              id="logo-footer"
+              alt="The logo of Crunch agency"
+          /></a>
+          <p>Crunch IVS</p>
+          <p>CVR No. 36708816</p>
+          <a href="index.html"
+            ><img
+              src="images/Group 10.png"
+              id="internship-label"
+              alt="Internship label"
+          /></a>
         </div>
-      </nav>
-    </header>
 
-    <!-- Menu Icon -->
-    <div class="menuIcon">
-      <span class="icon icon-bars"></span>
-      <span class="icon icon-bars overlay"></span>
-    </div>
+        <div id="col2">
+          <h5>CONTACT US</h5>
+          <p>
+            <a href="mailto:crunch@wearecrunch.dk">crunch@wearecrunch.dk</a>
+          </p>
+          <p><a href="tel:50554097">50554097</a></p>
+          <p>Mon - Fri: 8:30 am - 4:00 pm</p>
+          <p>Egensevej 25, 2770 Kastrup</p>
+          <p>CVR No. 36708816</p>
+          <p>CVR No. 36708816</p>
 
-    <!-- Overlay Menu -->
-    <div class="overlay-menu">
-      <ul id="menu-mobile">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="references.html">References</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+          <a href="https://www.facebook.com/wearecrunch" target="_blank">
+            <i class="fa fa-facebook-square icon-footer" aria-hidden="true"></i
+          ></a>
+
+          <a href="https://www.instagram.com/wearecrunchdk/" target="_blank">
+            <i class="fa fa-instagram icon-footer" aria-hidden="true"></i
+          ></a>
+
+          <a href="https://www.linkedin.com/company/crunchivs/" target="_blank">
+            <i class="fa fa-linkedin icon-footer" aria-hidden="true"></i
+          ></a>
+        </div>
+      </footer>
+      <!--Button go to top-->
+      <button onclick="topFunction()" id="Btn-top" title="Go to top">
+        <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
+      </button>
+      <script src="script.js"></script>
     </div>
-    <main></main>
-    <footer></footer>
-    <!--Button go to top-->
-    <button onclick="topFunction()" id="Btn-top" title="Go to top">
-      <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
-    </button>
-    <script src="script.js"></script>
   </body>
 </html>
