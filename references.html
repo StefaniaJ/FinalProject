@@ -87,6 +87,7 @@
         <h1>References</h1>
       </div>
 
+      <!-- Buttons section - for filtering the data -->
       <div class="buttons">
         <div class="buttons-wrapper" id="buttons-wrapper">
           <div class="buttons-menu btn active" id="all">
@@ -103,27 +104,31 @@
             <img src="images/cogwheel (1).png" alt="All references" />
             <p>Graphics</p>
           </div>
-          <!-- The content is inserted Dynamically using JavaScript -->
         </div>
       </div>
 
       <div id="references-wrapper">
-        <!-- The rest of the content is inserted Dynamically using JavaScript -->
+        <!-- The content is inserted dynamically using JavaScript -->
       </div>
     </main>
 
     <!-- Footer -->
     <footer></footer>
 
-    <!-- The template for each reference  -->
+    <!-- The template for each references  -->
     <template id="template-references">
       <article class="card">
-        <img class="card-img" src="IMG" style="width: 100%;" />
-        <h2 class="title">Company title</h2>
-        <p class="description">Description</p>
-        <button>
-          <a class="link-btn" href="#" target="_blank">See the project</a>
-        </button>
+        <a class="link-card" href="#" target="_blank">
+          <img class="card-img" src="IMG" style="width: 100%;" />
+          <p class="name">Company title</p>
+          <!-- <p class="description">Description</p> -->
+
+          <div class="middle">
+            <button>
+              <a class="link-btn" href="#" target="_blank"></a>
+            </button>
+          </div>
+        </a>
       </article>
     </template>
 

@@ -32,13 +32,30 @@ function loadJSON(link) {
 function showData(data) {
   const clone = template.cloneNode("true");
   console.log(data);
-  clone.querySelector(".title").textContent = data.gsx$category.$t;
-  clone.querySelector(".description").textContent = data.gsx$description.$t;
+  clone.querySelector(".name").textContent = data.gsx$name.$t;
+  // clone.querySelector(".description").textContent = data.gsx$description.$t;
   const img = data.gsx$image.$t;
-  clone
+  let imgM = clone
     .querySelector(".card-img")
-    .setAttribute("src", "../images/" + img + ".jpg");
-  clone.querySelector(".link-btn").href = data.gsx$url.$t;
+    .setAttribute("src", "../images/" + img);
+  clone.querySelector(".card-img").setAttribute("src", "../images/" + img);
+
+  let all_links = document.querySelectorAll(".card a");
+
+  if (data.gsx$category.$t == "websites") {
+    clone.querySelector(".link-btn").textContent = "See website";
+    clone.querySelector(".link-btn").href = data.gsx$url.$t;
+    clone.querySelector(".link-card").href = data.gsx$url.$t;
+  }
+
+  if (data.gsx$category.$t != "websites") {
+    clone.querySelector(".link-btn").textContent = "Zoom in";
+    // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img
+
+    // for (var i = 0; i < all_links.length; i++) {
+    //   all_links[i].removeAttribute("href");
+    // }
+  }
 
   main.appendChild(clone);
 }
