@@ -37,7 +37,7 @@ function showData(data) {
   clone.querySelector(".name").textContent = data.gsx$name.$t;
   // clone.querySelector(".description").textContent = data.gsx$description.$t;
   const img = data.gsx$image.$t;
-  clone.querySelector(".card-img").setAttribute("src", "../images/" + img);
+  clone.querySelector(".card-img").setAttribute("src", "images/" + img);
 
   if (data.gsx$category.$t == "websites") {
     clone.querySelector(".link-btn").textContent = "See website";

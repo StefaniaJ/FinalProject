@@ -146,7 +146,7 @@ footer ul li a.active {
 }
 
 #navbar ul {
-  padding-top: 10px;
+  padding-top: 30px;
   padding-right: 50px;
   display: inline-block;
   list-style: none;
@@ -466,7 +466,7 @@ footer ul li a.active {
 }
 
 .buttons {
-  height: 100px;
+  height: 95px;
   font-weight: bold;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 100%;
@@ -476,6 +476,7 @@ footer ul li a.active {
   width: 100%;
   text-align: center;
   background-color: yellow;
+  height: 100%;
 }
 
 .buttons-menu {
@@ -486,6 +487,8 @@ footer ul li a.active {
   list-style: none;
   text-align: center;
   border-right: 1.5px solid black;
+  padding-top: 14px;
+  height: 100%;
 }
 
 .buttons-menu img {
