@@ -50,7 +50,7 @@
           <div class="nav-wrapper">
             <!-- Navbar Links -->
             <ul id="menu">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html" class="active">Home</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="references.html">References</a></li>
               <li><a href="blog.html">Blog</a></li>
@@ -78,8 +78,154 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
+
       <main>
         <div id="index-space"></div>
+
+        <!-- Price carousel -->
+        <div id="carousel-price-wrapper">
+          <section class="carousel" aria-label="Gallery">
+            <ol class="carousel__viewport">
+              <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper">
+                  <a href="#carousel__slide4" class="carousel__prev"
+                    >Go to last slide</a
+                  >
+                  <a href="#carousel__slide2" class="carousel__next"
+                    >Go to next slide</a
+                  >
+                  <h3>Website</h3>
+                  <ul>
+                    <li>Web Design</li>
+                    <li>Web Development</li>
+                  </ul>
+                </div>
+              </li>
+              <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide1" class="carousel__prev"
+                  >Go to previous slide</a
+                >
+                <a href="#carousel__slide3" class="carousel__next"
+                  >Go to next slide</a
+                >
+              </li>
+              <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide2" class="carousel__prev"
+                  >Go to previous slide</a
+                >
+                <a href="#carousel__slide4" class="carousel__next"
+                  >Go to next slide</a
+                >
+              </li>
+              <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide3" class="carousel__prev"
+                  >Go to previous slide</a
+                >
+                <a href="#carousel__slide1" class="carousel__next"
+                  >Go to first slide</a
+                >
+              </li>
+            </ol>
+            <aside class="carousel__navigation">
+              <ol class="carousel__navigation-list">
+                <li class="carousel__navigation-item">
+                  <a
+                    href="#carousel__slide1"
+                    class="carousel__navigation-button"
+                    >Go to slide 1</a
+                  >
+                </li>
+                <li class="carousel__navigation-item">
+                  <a
+                    href="#carousel__slide2"
+                    class="carousel__navigation-button"
+                    >Go to slide 2</a
+                  >
+                </li>
+                <li class="carousel__navigation-item">
+                  <a
+                    href="#carousel__slide3"
+                    class="carousel__navigation-button"
+                    >Go to slide 3</a
+                  >
+                </li>
+                <li class="carousel__navigation-item">
+                  <a
+                    href="#carousel__slide4"
+                    class="carousel__navigation-button"
+                    >Go to slide 4</a
+                  >
+                </li>
+              </ol>
+            </aside>
+          </section>
+        </div>
+
+        <div id="slider-wrapper-testimonial">
+          <div class="slide-testimonial showing">
+            <p class="slider-testimonial-description">
+              <span><i class="fas fa-quote-right"></i></span> At Crunch, I have
+              been extremely professional and knowledgeable. The results of the
+              help I received speak for themselves. Both the website and the
+              advice I received have really had a beneficial impact on our
+              bottom line. Crunch understands how to base customer needs and
+              capabilities. I can only give Crunch my best recommendation.
+            </p>
+            <p class="lider-testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </p>
+            <h3>Klaus Reinhold</h3>
+            <p class="slider-testimonial-owner">Owner at Jettes Bus</p>
+          </div>
+
+          <div class="slide-testimonial">
+            <p class="slider-testimonial-description">
+              <span><i class="fas fa-quote-right"></i></span> Crunch has helped
+              us create a website, power point template, business card and
+              stationery. Throughout the course, Crunch has come up with many
+              qualified and creative inputs for designing the above. Crunch
+              works in a very structured way and ensures that there is
+              continuous progress in the projects. We can therefore recommend
+              Crunch.
+            </p>
+            <p class="lider-testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </p>
+            <h3>Lars Kallestrup</h3>
+            <p class="slider-testimonial-owner">Owner at KCG</p>
+          </div>
+
+          <div class="slide-testimonial">
+            <p class="slider-testimonial-description">
+              <span><i class="fas fa-quote-right"></i></span> Food culture can
+              highly recommend Crunch as a partner for the development and
+              design of large content-heavy websites. Crunch is both skilled,
+              creative and service minded, so we would like to colaborate with
+              them again.
+            </p>
+            <p class="lider-testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </p>
+            <h3>Hanne Seidler</h3>
+            <p class="slider-testimonial-owner">Owner at The food culture</p>
+          </div>
+
+          <button class="controls" id="previous">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="controls" id="next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
       </main>
       <footer>
         <!-- <div id="footer-wrapper"> -->
@@ -147,6 +293,17 @@
       <button onclick="topFunction()" id="Btn-top" title="Go to top">
         <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
       </button>
+
+      <script
+        SameSite="None; Secure"
+        src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"
+      ></script>
+      <script>
+        var myLandbot = new LandbotLivechat({
+          index: "https://landbot.io/u/H-484187-1CNAANJ6T6759I50/index.html",
+        });
+      </script>
+
       <script src="script.js"></script>
     </div>
   </body>
