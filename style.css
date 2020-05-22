@@ -5,8 +5,8 @@
   --body-color: #f8f8f8;
   --white-color: #fff;
   --blue-color: #2b58be;
+  --green-color: #15a32b;
   --yellow-color: #fcda4b;
-
   --fonts-montserrat: "Montserrat", sans-serif;
 }
 
@@ -677,6 +677,39 @@ ol li {
 /* ************************************************************************************************/
 
 /************************* HOME PAGE *********************************** */
+
+/************ Benefits  *************** */
+#benefits-section {
+  background-color: var(--white-color);
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+#benefits-template {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
+}
+
+#benefits-col1 {
+  background-color: yellow;
+  grid-column: 1/2;
+}
+
+#benefits-col2 {
+  background-color: fuchsia;
+  grid-column: 2/3;
+}
+
+#benefits-template ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+#benefits-template ul li i {
+  color: var(--white-color);
+  /* background-color: var(--green-color); */
+}
 
 /************ Process  *************** */
 #process-section {
