@@ -690,7 +690,13 @@ h1 {
   margin-bottom: 0.7em;
 }
 
-button {
+.button-contact a {
+  color: var(--white-color);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button-contact {
   background-color: var(--main-color);
   border: 1px solid transparent;
   border-radius: 3px;
@@ -707,15 +713,7 @@ button {
   /* vertical-align: middle; */
   display: block;
   margin: 0 auto;
-}
-button a {
-  color: var(--white-color);
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.button-contact {
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
 }
 
 .first-section img {
