@@ -1133,8 +1133,8 @@ p {
 .buttons-wrapper {
   width: 100%;
   text-align: center;
-  background-color: yellow;
   height: 100%;
+  background-color: var(--body-color);
 }
 
 .buttons-menu {
@@ -1147,6 +1147,8 @@ p {
   border-right: 1.5px solid black;
   padding-top: 14px;
   height: 100%;
+  cursor: pointer;
+  background-color: var(--white-color);
 }
 
 .buttons-menu img {
@@ -1161,21 +1163,22 @@ p {
 
 .buttons-menu:hover,
 .buttons-menu.active {
-  background-color: rebeccapurple;
+  /* background-color: rebeccapurple; */
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s ease;
 }
 
 #references-wrapper {
   margin-top: 80px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(397px, 1fr));
   grid-gap: 10px;
 }
 
 /* Style for cards */
 .card {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-  max-width: 300px;
+  max-width: 397px;
   margin: auto;
   text-align: center;
   font-family: arial;
@@ -1192,7 +1195,7 @@ p {
 }
 
 .card-img {
-  width: auto !important;
+  width: 397px !important;
   height: 250px;
   opacity: 1;
   display: block;
