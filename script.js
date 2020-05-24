@@ -101,3 +101,41 @@ next.onclick = function () {
 previous.onclick = function () {
   previousSlide();
 };
+
+// Home page - Price slider
+// Inspiration: https://www.sitepoint.com/make-a-simple-javascript-slideshow-without-jquery/
+
+let controlsPrice = document.querySelectorAll(".controls-price");
+for (let i = 0; i < controlsPrice.length; i++) {
+  controlsPrice[i].style.display = "inline-block";
+}
+
+let sliderPrice = document.querySelectorAll(
+  "#slider-wrapper-price .slide-price"
+);
+let currentSlidePrice = 0;
+let slideIntervalPrice = setInterval(nextSlidePrice, 5000);
+
+function nextSlidePrice() {
+  goToSlidePrice(currentSlidePrice + 1);
+}
+
+function previousSlidePrice() {
+  goToSlidePrice(currentSlidePrice - 1);
+}
+
+function goToSlidePrice(n) {
+  sliderPrice[currentSlidePrice].className = "slide-price";
+  currentSlidePrice = (n + sliderPrice.length) % sliderPrice.length;
+  sliderPrice[currentSlidePrice].className = "slide-price showing-price";
+}
+
+let nextPrice = document.getElementById("next-price");
+let previousPrice = document.getElementById("previous-price");
+
+nextPrice.onclick = function () {
+  nextSlidePrice();
+};
+previousPrice.onclick = function () {
+  previousSlidePrice();
+};
