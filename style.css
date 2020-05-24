@@ -704,7 +704,9 @@ button {
   box-shadow: 0 2px 8px hsla(0, 0%, 42%, 0.4);
   transition: box-shadow 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955),
     transform 0.13s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  vertical-align: middle;
+  /* vertical-align: middle; */
+  display: block;
+  margin: 0 auto;
 }
 button a {
   color: var(--white-color);
