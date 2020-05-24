@@ -141,40 +141,36 @@ previousPrice.onclick = function () {
 };
 
 //  /////////////////////
-let form = document.querySelector(".validate");
-// function post() {
-const data = {
-  name: form.elements.name.value,
-  email: form.elements.email.value,
-  phone: form.elements.phone.value,
-  message: form.elements.message.value,
-};
 
-const postData = JSON.stringify(data);
-fetch("https://crunchdatabase-8fb6.restdb.io/rest/userscontactinfo", {
-  method: "post",
-  headers: {
-    "Content-Type": "application/json; charset=utf-8",
-    "x-apikey": "	5ecaa66f4a532801892ed711",
-    "cache-control": "no-cache",
-  },
-  body: postData,
-})
-  .then((res) => res.json())
-  .then((data) => console.log(data));
-// addSingerToTheDOM(data);
-// }
+// fetch("https://crunchdatabase-8fb6.restdb.io/rest/userscontactinfo", {
+//   method: "get",
+//   headers: {
+//     "Content-Type": "application/json; charset=utf-8",
+//     "x-apikey": "5ecaa66f4a532801892ed711",
+//     "cache-control": "no-cache",
+//   },
+// })
+//   .then((e) => e.json())
+//   .then((e) => console.log(e));
 
-form.addEventListener("submit", (evl) => {
-  console.log(evl);
-  evl.preventDefault();
-});
+// const form = document.querySelector("form");
 
-form.elements.name.addEventListener("input", (e) => {
-  console.log(e.key);
-  document.querySelector("h3").textContent = form.elements.name.value;
-});
+// const data = {
+//   name: form.elements.name.value,
+//   email: form.elements.email.value,
+//   phone: form.elements.phone.value,
+//   message: form.elements.message.value,
+// };
 
-form.elements.name.addEventListener("blur", (e) => {
-  console.log("clicked");
-});
+// const postData = JSON.stringify(data);
+// fetch("https://crunchdatabase-8fb6.restdb.io/rest/userscontactinfo", {
+//   method: "post",
+//   headers: {
+//     "Content-Type": "application/json; charset=utf-8",
+//     "x-apikey": "5ecaa66f4a532801892ed711",
+//     "cache-control": "no-cache",
+//   },
+//   body: postData,
+// })
+//   .then((e) => e.json())
+//   .then((data) => console.log(data));
