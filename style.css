@@ -840,6 +840,115 @@ h1 {
   color: var(--text-color);
 }
 
+/************ Price  *************** */
+
+#slider-wrapper-price {
+  position: relative;
+  height: 300px;
+  padding: 0px;
+  margin: 0px;
+  width: 90%;
+  margin: 0 auto;
+  perspective: 100px;
+  background-color: var(--body-color);
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.slide-price {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  color: var(--text-color);
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.showing-price {
+  opacity: 1;
+  z-index: 2;
+}
+
+.controls-price {
+  background: transparent;
+  color: var(--main-color);
+  border: 0;
+  font-size: 25px;
+  cursor: pointer;
+  /* width: 70px; */
+  z-index: 10;
+  position: absolute;
+  top: 120px;
+  transition: transform 0.2s;
+  border: none;
+}
+
+.controls-price :hover {
+  transform: scale(1.5);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+}
+
+#previous-price {
+  left: -1rem;
+}
+
+#next-price {
+  right: -1rem;
+}
+.slider-price-title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.125em;
+  color: var(--white-color);
+  margin-bottom: 0.66em;
+  line-height: 1.2;
+  background-color: var(--main-color);
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 12px 24px;
+}
+
+.slide-price ul {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0 auto;
+  display: table;
+  margin-bottom: 2em;
+}
+
+.slide-price ul li a {
+  font-size: 1.125em;
+  line-height: 1.5;
+  color: var(--subtitle-color);
+  text-decoration: none;
+}
+.slide-price ul li i {
+  color: var(--green-color);
+  margin-right: 8px;
+}
+
+#price-pricing {
+  text-align: center;
+}
+#price-pricing span {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--main-color);
+  line-height: 1.2;
+  font-size: 1.95em;
+}
+#payment-section h3 {
+  margin-bottom: 0.66em;
+}
+
 /************ All services  *************** */
 section {
   /* width: 990px; */
@@ -994,7 +1103,7 @@ section {
 }
 
 p {
-  font-size: 16px;
+  font-size: 1em;
 }
 /* ********************************************* REFERENCES PAGE ************************************* */
 
@@ -1299,19 +1408,29 @@ p {
     padding-left: 50px;
   }
 
+  /* HOME PAE */
   /* Main services */
   .main-services-card {
     max-width: 320px;
   }
 
-  /* HOME PAE */
   /* Process */
   .process-card {
     max-width: 350px;
   }
 
-  /* Testimonial slider */
+  /* Price */
+  #next-price {
+    right: -2rem;
+  }
+  #previous-price {
+    left: -2rem;
+  }
+  #slider-wrapper-price {
+    max-width: 450px;
+  }
 
+  /* Testimonial slider */
   #slider-wrapper-testimonial {
     height: 380px;
   }
@@ -1324,9 +1443,9 @@ p {
 }
 
 @media only screen and (min-width: 606px) {
-  h1 {
+  /* h1 {
     font-size: 2.44em;
-  }
+  } */
 
   section {
     padding-bottom: 4em;
@@ -1335,7 +1454,6 @@ p {
     padding-right: 50px;
   }
   /* HOME PAE */
-  /************ First section  *************** */
   h1 {
     font-size: 2.2em;
   }
@@ -1364,7 +1482,6 @@ p {
   }
 
   /* Testimonial slider */
-
   #slider-wrapper-testimonial {
     height: 350px;
   }
@@ -1372,8 +1489,13 @@ p {
 
 @media only screen and (min-width: 650px) {
   /* HOME PAE */
-  /* Testimonial slider */
 
+  /* Price */
+  .controls-price {
+    font-size: 30px;
+  }
+
+  /* Testimonial slider */
   #slider-wrapper-testimonial {
     height: 360px;
   }
