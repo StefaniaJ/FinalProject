@@ -33,6 +33,11 @@
     />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
   </head>
 
   <!-- Body area -->
@@ -162,88 +167,6 @@
             </article>
           </div>
         </section>
-
-        <!-- Price carousel -->
-        <!-- <div id="carousel-price-wrapper">
-          <section class="carousel" aria-label="Gallery">
-            <ol class="carousel__viewport">
-              <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-                <div class="carousel__snapper">
-                  <a href="#carousel__slide4" class="carousel__prev"
-                    >Go to last slide</a
-                  >
-                  <a href="#carousel__slide2" class="carousel__next"
-                    >Go to next slide</a
-                  >
-                  <h3>Website</h3>
-                  <ul>
-                    <li>Web Design</li>
-                    <li>Web Development</li>
-                  </ul>
-                </div>
-              </li>
-              <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide1" class="carousel__prev"
-                  >Go to previous slide</a
-                >
-                <a href="#carousel__slide3" class="carousel__next"
-                  >Go to next slide</a
-                >
-              </li>
-              <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide2" class="carousel__prev"
-                  >Go to previous slide</a
-                >
-                <a href="#carousel__slide4" class="carousel__next"
-                  >Go to next slide</a
-                >
-              </li>
-              <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide3" class="carousel__prev"
-                  >Go to previous slide</a
-                >
-                <a href="#carousel__slide1" class="carousel__next"
-                  >Go to first slide</a
-                >
-              </li>
-            </ol>
-            <aside class="carousel__navigation">
-              <ol class="carousel__navigation-list">
-                <li class="carousel__navigation-item">
-                  <a
-                    href="#carousel__slide1"
-                    class="carousel__navigation-button"
-                    >Go to slide 1</a
-                  >
-                </li>
-                <li class="carousel__navigation-item">
-                  <a
-                    href="#carousel__slide2"
-                    class="carousel__navigation-button"
-                    >Go to slide 2</a
-                  >
-                </li>
-                <li class="carousel__navigation-item">
-                  <a
-                    href="#carousel__slide3"
-                    class="carousel__navigation-button"
-                    >Go to slide 3</a
-                  >
-                </li>
-                <li class="carousel__navigation-item">
-                  <a
-                    href="#carousel__slide4"
-                    class="carousel__navigation-button"
-                    >Go to slide 4</a
-                  >
-                </li>
-              </ol>
-            </aside>
-          </section>
-        </div> -->
 
         <!-- Benefits  -->
         <section>
@@ -415,10 +338,10 @@
         </section>
 
         <!-- References  -->
-        <section>
+        <div>
           <h2>+10 years of experience as digital agenty</h2>
 
-          <div id="slider-wrapper-testimonial">
+          <!-- <div id="slider-wrapper-testimonial">
             <div class="slide-testimonial showing"></div>
 
             <div class="slide-testimonial"></div>
@@ -431,8 +354,45 @@
             <button class="controls" id="next">
               <i class="fas fa-chevron-right"></i>
             </button>
+          </div> -->
+
+          <!-- Flickity HTML init -->
+          <div
+            class="carousel"
+            data-flickity='{ "freeScroll": true, "wrapAround": true, "autoPlay": false}'
+          >
+            <div class="carousel-cell">
+              <img
+                src="images/absalon-folkehuset.jpg"
+                alt="Absalon restaurant website build in WordPress "
+              />
+            </div>
+            <div class="carousel-cell">
+              <img
+                src="images/gastronomiskinnovation.jpg"
+                alt="Gastronomy website build in WordPress "
+              />
+            </div>
+            <div class="carousel-cell">
+              <img
+                src="images/lars-gitz.jpg"
+                alt="Architecture website build in WordPress "
+              />
+            </div>
+            <div class="carousel-cell">
+              <img
+                src="images/wesecure.jpg"
+                alt="Security websites build in WordPress "
+              />
+            </div>
+            <div class="carousel-cell">
+              <img
+                src="images/frontmonique.jpg"
+                alt="Personal websites build in WordPress "
+              />
+            </div>
           </div>
-        </section>
+        </div>
 
         <!-- All the services  -->
         <section>
@@ -619,7 +579,76 @@
             <i class="fas fa-chevron-right"></i>
           </button>
         </section>
+
+        <section>
+          <form class="validate">
+            <section>
+              <label for="firstname">
+                Name:
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  minlength="2"
+                  required
+                />
+              </label>
+            </section>
+
+            <section>
+              <label for="email">
+                Email:
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+                  required
+                />
+              </label>
+            </section>
+
+            <section>
+              <label for="phone">
+                Phone:
+                <input
+                  type="tel"
+                  pattern="[0-9]*"
+                  id="phone"
+                  name="phone"
+                  class="phone"
+                  required
+                />
+              </label>
+            </section>
+            <section>
+              <label for="message">
+                Message:
+                <input
+                  type="textarea"
+                  id="message"
+                  name="message"
+                  class="message"
+                />
+              </label>
+            </section>
+
+            <section>
+              <p>By clicking Submit, you agree to our <a href="#">Terms</a>.</p>
+            </section>
+            <section>
+              <input
+                type="submit"
+                value="Submit"
+                name="submit"
+                class="submitBtn"
+                id="addSinger"
+              />
+            </section>
+          </form>
+        </section>
       </main>
+
       <footer>
         <!-- <div id="footer-wrapper"> -->
         <div id="col1">
@@ -682,6 +711,7 @@
         </div>
         <!-- </div> -->
       </footer>
+
       <!--Button go to top-->
       <button onclick="topFunction()" id="Btn-top" title="Go to top">
         <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
@@ -698,6 +728,7 @@
       </script>
 
       <script src="script.js"></script>
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     </div>
   </body>
 </html>
