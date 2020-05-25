@@ -115,6 +115,38 @@ footer ul li a.active {
 /* Style for the Hamburger & the Navigation Bar */
 /*============ Navbar ============*/
 
+/* Style the sidenav links and the dropdown button  mobile*/
+.dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over-mobile */
+.dropdown-btn:hover {
+  color: red;
+}
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content- mobile */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon mobile */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
 #navbar {
   position: fixed;
   top: 0;
@@ -143,9 +175,6 @@ footer ul li a.active {
   text-align: center;
   transition: transform 0.5s ease-out;
 }
-/* a.active {
-  color: var(--main-color) !important;
-} */
 
 @media (max-width: 880px) {
   #navbar ul {
@@ -170,16 +199,77 @@ footer ul li a.active {
   transition: all 0.5s ease;
 }
 
+#dropdown-desktop {
+  overflow: hidden;
+  display: inline-block;
+}
+
+#dropdown-desktop-btn {
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  background-color: inherit;
+  font-weight: 600;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin: -2px 10px;
+  padding: 0 4px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#dropdown-desktop-content {
+  display: none;
+  position: absolute;
+  background-color: #f8f8f8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding-top: 20px;
+}
+
+#dropdown-desktop-content a {
+  float: none;
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+}
+
+#dropdown-desktop-content a:hover,
+#dropdown-desktop-content a.active {
+  color: var(--main-color);
+}
+
+#dropdown-desktop:hover #dropdown-desktop-content {
+  display: block;
+}
+
+#dropdown-desktop-btn i {
+  padding-left: 8px;
+}
+
 #navbar li a:hover,
-#navbar li a.active {
+#dropdown-desktop-btn:hover,
+#navbar li a.active,
+#dropdown-desktop-btn.active {
   color: var(--main-color);
   transition: all 0.5s ease;
 }
 
-/* Animated Bottom Line */
-
+/*  Bottom Line */
 #navbar li a:before,
-#navbar li a:after {
+#dropdown-desktop-btn:before,
+#navbar li a:after,
+#dropdown-desktop-btn:after {
   content: "";
   position: absolute;
   width: 0%;
@@ -188,31 +278,36 @@ footer ul li a.active {
   background: var(--main-color);
 }
 
-#navbar li a:before {
+#navbar li a:before,
+#dropdown-desktop-btn:before {
   left: 0;
   transition: 0.5s;
 }
 
-#navbar li a:after {
+#navbar li a:after,
+#dropdown-desktop-btn::after {
   background: var(--main-color);
   right: 0;
 }
 
 #navbar li a:hover:before,
-#navbar li a.active:before {
+#dropdown-desktop-btn:hover:before,
+#navbar li a.active:before,
+#dropdown-desktop-btn.active:before {
   background: var(--main-color);
   width: 100%;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 #navbar li a:hover:after,
-#navbar li a.active:after {
+#dropdown-desktop-btn:hover:after,
+#navbar li a.active:after,
+#dropdown-desktop-btn.active:after {
   background: transparent;
   width: 100%;
 }
 
-/*======= Responsive Mobile Menu========*/
-
+/********* Responsive Mobile Menu *********/
 .overlay-menu {
   background: var(--white-color);
   color: var(--text-color);
