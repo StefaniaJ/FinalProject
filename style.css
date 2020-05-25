@@ -113,9 +113,9 @@ footer ul li a.active {
   width: 100px;
 }
 /* Style for the Hamburger & the Navigation Bar */
-/*============ Navbar ============*/
+/*============ Navigation ============*/
 
-#navbar {
+nav {
   position: fixed;
   top: 0;
   height: 60px;
@@ -127,7 +127,7 @@ footer ul li a.active {
   background-color: white;
 }
 
-.nav-wrapper {
+.nav-desktop-wrapper {
   text-align: right;
   width: 100%;
   position: fixed;
@@ -135,7 +135,7 @@ footer ul li a.active {
   z-index: -1;
 }
 
-#navbar ul {
+nav ul {
   padding-top: 30px;
   padding-right: 50px;
   display: inline-block;
@@ -145,16 +145,16 @@ footer ul li a.active {
 }
 
 @media (max-width: 880px) {
-  #navbar ul {
+  nav ul {
     display: none;
   }
 }
 
-#navbar li {
+nav li {
   display: inline-block;
 }
 
-#navbar li a {
+nav li a {
   color: var(--text-color);
   display: block;
   font-size: 12px;
@@ -225,18 +225,18 @@ footer ul li a.active {
   padding-left: 8px;
 }
 
-#navbar li a:hover,
+nav li a:hover,
 #dropdown-desktop-btn:hover,
-#navbar li a.active,
+nav li a.active,
 #dropdown-desktop-btn.active {
   color: var(--main-color);
   transition: all 0.5s ease;
 }
 
 /*  Bottom Line */
-#navbar li a:before,
+nav li a:before,
 #dropdown-desktop-btn:before,
-#navbar li a:after,
+nav li a:after,
 #dropdown-desktop-btn:after {
   content: "";
   position: absolute;
@@ -246,30 +246,30 @@ footer ul li a.active {
   background: var(--main-color);
 }
 
-#navbar li a:before,
+nav li a:before,
 #dropdown-desktop-btn:before {
   left: 0;
   transition: 0.5s;
 }
 
-#navbar li a:after,
+nav li a:after,
 #dropdown-desktop-btn::after {
   background: var(--main-color);
   right: 0;
 }
 
-#navbar li a:hover:before,
+nav li a:hover:before,
 #dropdown-desktop-btn:hover:before,
-#navbar li a.active:before,
+nav li a.active:before,
 #dropdown-desktop-btn.active:before {
   background: var(--main-color);
   width: 100%;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-#navbar li a:hover:after,
+nav li a:hover:after,
 #dropdown-desktop-btn:hover:after,
-#navbar li a.active:after,
+nav li a.active:after,
 #dropdown-desktop-btn.active:after {
   background: transparent;
   width: 100%;
@@ -437,7 +437,7 @@ footer ul li a.active {
   #logo {
     margin-left: 15px;
   }
-  .menuIcon {
+  .menu-icon-wrapper {
     cursor: pointer;
     display: block;
     position: absolute;
@@ -528,27 +528,27 @@ footer ul li a.active {
     }
   }
   /* Toggle Menu Icon */
-  .menuIcon {
+  .menu-icon-wrapper {
     position: fixed;
   }
-  .menuIcon.toggle .icon-bars {
+  .menu-icon-wrapper.toggle .icon-bars {
     top: 5px;
     transform: translate3d(0, 5px, 0) rotate(135deg);
     transition-delay: 0.1s;
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  .menuIcon.toggle .icon-bars::before {
+  .menu-icon-wrapper.toggle .icon-bars::before {
     top: 0;
     transition-delay: 0.1s;
     opacity: 0;
   }
-  .menuIcon.toggle .icon-bars::after {
+  .menu-icon-wrapper.toggle .icon-bars::after {
     top: 10px;
     transform: translate3d(0, -10px, 0) rotate(-270deg);
     transition-delay: 0.1s;
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  .menuIcon.toggle .icon-bars.overlay {
+  .menu-icon-wrapper.toggle .icon-bars.overlay {
     width: 20px;
     opacity: 0;
     transition: all 0s ease 0s;

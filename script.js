@@ -1,50 +1,51 @@
 "use strict";
 
 // Navigation
-// Responsive Toggle Navigation =============================================
-let menuIcon = document.querySelector(".menuIcon");
-let nav = document.querySelector(".overlay-menu");
+// Responsive Toggle Navigation
+let menuIconWrapper = document.querySelector(".menu-icon-wrapper");
+let navigation = document.querySelector(".overlay-menu");
 
-menuIcon.addEventListener("click", () => {
-  if (nav.style.transform != "translateX(-10%)") {
-    nav.style.transform = "translateX(-10%)";
-    nav.style.transition = "transform 0.2s ease-out";
+menuIconWrapper.addEventListener("click", () => {
+  if (navigation.style.transform != "translateX(-10%)") {
+    navigation.style.transform = "translateX(-10%)";
+    navigation.style.transition = "transform 0.2s ease-out";
   } else {
-    nav.style.transform = "translateX(-100%)";
-    nav.style.transition = "transform 0.2s ease-out";
+    navigation.style.transform = "translateX(-100%)";
+    navigation.style.transition = "transform 0.2s ease-out";
   }
 });
 
-// Toggle Menu Icon ========================================
-let toggleIcon = document.querySelector(".menuIcon");
+// Toggle Menu Icon
+let toggleIcon = document.querySelector(".menu-icon-wrapper");
 
 toggleIcon.addEventListener("click", () => {
-  if (toggleIcon.className != "menuIcon toggle") {
+  if (toggleIcon.className != "menu-icon-wrapper toggle") {
     toggleIcon.className += " toggle";
   } else {
-    toggleIcon.className = "menuIcon";
+    toggleIcon.className = "menu-icon-wrapper";
   }
 });
 
 // Close the mobile menu when you click a menu item
 let mobileClose = document.querySelector("#menu-mobile");
 mobileClose.addEventListener("click", function () {
-  if (nav.style.transform != "translateX(-10%)") {
-    nav.style.transform = "translateX(-10%)";
-    nav.style.transition = "transform 0.2s ease-out";
+  if (navigation.style.transform != "translateX(-10%)") {
+    navigation.style.transform = "translateX(-10%)";
+    navigation.style.transition = "transform 0.2s ease-out";
   } else {
-    nav.style.transform = "translateX(-100%)";
-    nav.style.transition = "transform 0.2s ease-out";
+    navigation.style.transform = "translateX(-100%)";
+    navigation.style.transition = "transform 0.2s ease-out";
   }
 
-  if (toggleIcon.className != "menuIcon toggle") {
+  if (toggleIcon.className != "menuIconWrapper toggle") {
     toggleIcon.className += " toggle";
   } else {
-    toggleIcon.className = "menuIcon";
+    toggleIcon.className = "menuIconWrapper";
   }
 });
 
 // Loop through all dropdown buttons to toggle between hiding and showing its dropdown content
+// Inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_dropdown
 let dropdown = document.getElementsByClassName("dropdown-btn");
 let i;
 
@@ -60,7 +61,7 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
-// When you scroll down 20px from the top of the page,you can see the button(built-in JavaScript's event  )
+// When you scroll down 20px from the top of the page, you can see the button
 window.onscroll = function () {
   scroll();
 };
@@ -73,7 +74,7 @@ function scroll() {
   }
 }
 
-// When you click on the button,you will see the top of the page
+// When you click on the button, you will see the top of the page
 function topFunction() {
   document.documentElement.scrollTop = 0;
 }
