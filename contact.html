@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crunch</title>
     <meta name="description" content="Final Project - Multimedia Design" />
-    <meta name="title" content="Final Project - Multimedia Design" />
+    <title>Final Exam</title>
     <link
       rel="icon"
       type="image/png"
       href="images/Crunch-UN-logo-orange.png"
       sizes="32x32"
+    />
+    <!-- Source Sans Google Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
     />
 
     <!-- Montserrat Google Web Fonts -->
@@ -18,7 +22,6 @@
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
     />
-
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
@@ -28,33 +31,47 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
   </head>
 
   <!-- Body area -->
-
   <body>
     <!-- Header area -->
-    <header id="header">
-      <!-- Navigation Bar -->
-      <nav id="navbar" class="navbarbox">
-        <!-- Logo with a link to the Home page -->
+    <header>
+      <!-- Navigation area -->
+      <nav>
+        <!-- Logo linked to the Home page -->
         <a href="index.html"
           ><img
             src="images/Crunch-logo-orange.png"
             id="logo"
-            alt="The logo of Crunch agency"
+            alt="wearecrunch.dk"
         /></a>
-
-        <div class="nav-wrapper">
-          <!-- Navbar Links -->
-          <ul id="menu">
+        <!-- Navigation wrapper -->
+        <div class="nav-desktop-wrapper">
+          <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
+
+            <div id="dropdown-desktop">
+              <li class="dropdown-desktop-btn">
+                Services
+                <i class="fa fa-caret-down"></i>
+              </li>
+              <div id="dropdown-desktop-content">
+                <a href="websites.html">Website</a>
+                <a href="graphicdesign.html">Graphic design</a>
+                <a href="onlinemarketing.html">Online marketing</a>
+                <a href="support.html">Support</a>
+              </div>
+            </div>
             <li><a href="references.html">References</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html" class="notdone">Blog</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
@@ -62,40 +79,315 @@
       </nav>
     </header>
 
-    <!-- Menu Icon -->
-    <div class="menuIcon">
+    <!-- Menu icon area -->
+    <div class="menu-icon-wrapper">
       <span class="icon icon-bars"></span>
       <span class="icon icon-bars overlay"></span>
     </div>
 
-    <!-- Overlay Menu -->
-    <div class="overlay-menu">
-      <ul id="menu-mobile">
+    <!-- Overlay menu mobile -->
+    <div class="mobile-menu-wrapper">
+      <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li class="dropdown-btn">
+          Services
+          <i class="fa fa-caret-down"></i>
+        </li>
+        <div class="dropdown-container">
+          <a href="websites.html">Website</a>
+          <a href="graphicdesign.html">Graphic design</a>
+          <a href="onlinemarketing.html">Online marketing</a>
+          <a href="support.html">Support</a>
+        </div>
+
         <li><a href="references.html">References</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="blog.html" class="notdone">Blog</a></li>
         <li><a href="about.html">About us</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </div>
 
-    <!-- Main content -->
-    <main id="main-grid" class="main-references">
-      <!-- Hero section -->
-      <div class="hero-section">
-        <h1>References</h1>
+    <main>
+      <section class="first-section">
+        <div class="first-section-col1">
+          <h1>Websites</h1>
+        </div>
+        <img
+          class="first-section-col2"
+          src="images/Header_websites.png"
+          alt="Hight quality WordPress websites in Copenhagen"
+        />
+      </section>
+
+      <!-- Benefits  -->
+      <section>
+        <h2>Web agency with all the benefits</h2>
+        <h3>
+          We give your business online visibility and value because your success
+          is our priority.
+        </h3>
+        <div id="benefits-template">
+          <div id="benefits-col1">
+            <ul>
+              <li><i class="fas fa-check-circle"></i>Personal service</li>
+              <li><i class="fas fa-check-circle"></i>Competitive prices</li>
+              <li><i class="fas fa-check-circle"></i>You own the solution</li>
+              <li>
+                <i class="fas fa-check-circle"></i>All services under one roof
+              </li>
+            </ul>
+          </div>
+
+          <div id="benefits-col2">
+            <ul>
+              <li><i class="fas fa-check-circle"></i>No hidden fees</li>
+              <li>
+                <i class="fas fa-check-circle"></i>Experience with all
+                industries
+              </li>
+              <li><i class="fas fa-check-circle"></i>Get your unique design</li>
+              <li>
+                <i class="fas fa-check-circle"></i>Opportunity for long-term
+                <span>cooperation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- References  -->
+      <div>
+        <h2>+10 years of experience as digital agenty</h2>
+
+        <!-- Flickity HTML init -->
+        <div
+          class="carousel"
+          data-flickity='{ "freeScroll": true, "wrapAround": true, "autoPlay": false}'
+        >
+          <div class="carousel-cell">
+            <img
+              src="images/absalon-folkehuset.jpg"
+              alt="Absalon restaurant website build in WordPress "
+            />
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="images/gastronomiskinnovation.jpg"
+              alt="Gastronomy website build in WordPress "
+            />
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="images/lars-gitz.jpg"
+              alt="Architecture website build in WordPress "
+            />
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="images/wesecure.jpg"
+              alt="Security websites build in WordPress "
+            />
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="images/frontmonique.jpg"
+              alt="Personal websites build in WordPress "
+            />
+          </div>
+        </div>
       </div>
+
+      <!-- All the services  -->
+      <section>
+        <h2>We are experts in</h2>
+        <div id="allservices-template">
+          <article class="allservices-card">
+            <a class="allservices-card-link" href="#" target="_blank">
+              <img
+                class="allservices-card-img"
+                src="images/3-hight-quality-website.png"
+                alt="High quality websites "
+              />
+              <p class="allservices-card-title">Website</p>
+              <p class="allservices-card-description">
+                Professional and responsive websites created in WordPress
+              </p>
+            </a>
+          </article>
+
+          <article class="allservices-card">
+            <a class="allservices-card-link" href="#" target="_blank">
+              <img
+                class="allservices-card-img"
+                src="images/3-graphic-elements.png"
+                alt="High quality graphic elements"
+              />
+              <p class="allservices-card-title">Graphic Design</p>
+              <p class="allservices-card-description">
+                Professional logo and graphic elements
+              </p>
+            </a>
+          </article>
+
+          <article class="allservices-card">
+            <a class="allservices-card-link" href="#" target="_blank">
+              <img
+                class="allservices-card-img"
+                src="images/3-seo-strategy-min.png"
+                alt=" Optimize online visibility on the website with SEO"
+              />
+              <p class="allservices-card-title">SEO</p>
+              <p class="allservices-card-description">
+                Optimizing your website's online visibility
+              </p>
+            </a>
+          </article>
+
+          <article class="allservices-card">
+            <a class="allservices-card-link" href="#" target="_blank">
+              <img
+                class="allservices-card-img"
+                src="images/3-google-ads-advertise-min.png"
+                alt="Advertising on Google Ads"
+              />
+              <p class="allservices-card-title">Google Ads</p>
+              <p class="allservices-card-description">
+                Advertising to your target group using the right keywords
+              </p>
+            </a>
+          </article>
+
+          <article class="allservices-card">
+            <a class="allservices-card-link" href="#" target="_blank">
+              <img
+                class="allservices-card-img"
+                src="images/3-facebook-advertise-min.png"
+                alt="Advertising on Facebook"
+              />
+              <p class="allservices-card-title">Facebook Advertise</p>
+              <p class="allservices-card-description">
+                Advertising via the most used social media channel
+              </p>
+            </a>
+          </article>
+
+          <article class="allservices-card">
+            <a class="allservices-card-link" href="#" target="_blank">
+              <img
+                class="allservices-card-img"
+                src="images/3-linkedin-advertise-min.png"
+                alt="Advertising on LinkedIn"
+              />
+              <p class="allservices-card-title">LinkedIn Advertise</p>
+              <p class="allservices-card-description">
+                Advertising via the world's largest professional network
+              </p>
+            </a>
+          </article>
+
+          <article class="allservices-card">
+            <a class="allservices-card-link" href="#" target="_blank">
+              <img
+                class="allservices-card-img"
+                src="images/3-hosting-min.png"
+                alt="Host service"
+              />
+              <p class="allservices-card-title">Hosting</p>
+              <p class="allservices-card-description">
+                We provide web hosting and take care of it
+              </p>
+            </a>
+          </article>
+
+          <article class="allservices-card">
+            <a class="allservices-card-link" href="#" target="_blank">
+              <img
+                class="allservices-card-img"
+                src="images/3-support-min.png"
+                alt="Support for the website"
+              />
+              <p class="allservices-card-title">Support</p>
+              <p class="allservices-card-description">
+                Help with different tasks related to our services
+              </p>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Testimonial slider  -->
+      <section id="slider-wrapper-testimonial">
+        <div class="slide-testimonial showing">
+          <p class="slider-testimonial-description">
+            <i class="fas fa-quote-right"></i>At Crunch, I have been extremely
+            professional and knowledgeable. The results of the help I received
+            speak for themselves. Both the website and the advice I received
+            have really had a beneficial impact on our bottom line. Crunch
+            understands how to base customer needs and capabilities. I can only
+            give Crunch my best recommendation.
+          </p>
+          <p class="slider-testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i>
+          </p>
+          <p class="slider-testimonial-owner">
+            Klaus Reinhold | Owner at Jettes Bus
+          </p>
+        </div>
+
+        <div class="slide-testimonial">
+          <p class="slider-testimonial-description">
+            <i class="fas fa-quote-right"></i>Crunch has helped us create a
+            website, power point template, business card and stationery.
+            Throughout the course, Crunch has come up with many qualified and
+            creative inputs for designing the above. Crunch works in a very
+            structured way and ensures that there is continuous progress in the
+            projects. We can therefore recommend Crunch.
+          </p>
+          <p class="slider-testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i>
+          </p>
+          <p class="slider-testimonial-owner">
+            Lars Kallestrup | Owner at KCG
+          </p>
+        </div>
+
+        <div class="slide-testimonial">
+          <p class="slider-testimonial-description">
+            <i class="fas fa-quote-right"></i> Food culture can highly recommend
+            Crunch as a partner for the development and design of large
+            content-heavy websites. Crunch is both skilled, creative and service
+            minded, so we would like to colaborate with them again.
+          </p>
+          <p class="slider-testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i>
+          </p>
+          <p class="slider-testimonial-owner">
+            Hanne Seidler |Owner at The food culture
+          </p>
+        </div>
+
+        <button class="controls" id="previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="controls" id="next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </section>
     </main>
 
-    <!-- Footer -->
     <footer>
       <div id="col1">
         <a href="index.html"
           ><img
             src="images/Crunch-logo-orange.png"
             id="logo-footer"
-            alt="The logo of Crunch agency"
+            alt="Crunch digital agency"
         /></a>
         <p>Crunch IVS</p>
         <p>CVR No. 36708816</p>
@@ -103,7 +395,7 @@
           ><img
             src="images/Group 10.png"
             id="internship-label"
-            alt="Internship label"
+            alt="Internship offerts"
         /></a>
       </div>
 
@@ -153,6 +445,17 @@
       <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
     </button>
 
+    <script
+      SameSite="None; Secure"
+      src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"
+    ></script>
+    <script>
+      var myLandbot = new LandbotLivechat({
+        index: "https://landbot.io/u/H-484187-1CNAANJ6T6759I50/index.html",
+      });
+    </script>
+
     <script src="script.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>

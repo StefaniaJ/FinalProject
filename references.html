@@ -37,24 +37,35 @@
 
   <body>
     <!-- Header area -->
-    <header id="header">
-      <!-- Navigation Bar -->
-      <nav id="navbar" class="navbarbox">
-        <!-- Logo with a link to the Home page -->
+    <header>
+      <!-- Navigation area -->
+      <nav>
+        <!-- Logo linked to the Home page -->
         <a href="index.html"
           ><img
             src="images/Crunch-logo-orange.png"
             id="logo"
-            alt="The logo of Crunch agency"
+            alt="wearecrunch.dk"
         /></a>
-
-        <div class="nav-wrapper">
-          <!-- Navbar Links -->
-          <ul id="menu">
+        <!-- Navigation wrapper -->
+        <div class="nav-desktop-wrapper">
+          <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
+
+            <div id="dropdown-desktop">
+              <li class="dropdown-desktop-btn">
+                Services
+                <i class="fa fa-caret-down"></i>
+              </li>
+              <div id="dropdown-desktop-content">
+                <a href="websites.html">Website</a>
+                <a href="graphicdesign.html">Graphic design</a>
+                <a href="onlinemarketing.html">Online marketing</a>
+                <a href="support.html">Support</a>
+              </div>
+            </div>
             <li><a href="references.html" class="active">References</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html" class="notdone">Blog</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -62,19 +73,29 @@
       </nav>
     </header>
 
-    <!-- Menu Icon -->
-    <div class="menuIcon">
+    <!-- Menu icon area -->
+    <div class="menu-icon-wrapper">
       <span class="icon icon-bars"></span>
       <span class="icon icon-bars overlay"></span>
     </div>
 
-    <!-- Overlay Menu -->
-    <div class="overlay-menu">
-      <ul id="menu-mobile">
+    <!-- Overlay menu mobile -->
+    <div class="mobile-menu-wrapper">
+      <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="references.html">References</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li class="dropdown-btn">
+          Services
+          <i class="fa fa-caret-down"></i>
+        </li>
+        <div class="dropdown-container">
+          <a href="websites.html">Website</a>
+          <a href="graphicdesign.html">Graphic design</a>
+          <a href="onlinemarketing.html">Online marketing</a>
+          <a href="support.html">Support</a>
+        </div>
+
+        <li><a href="references.html" class="active">References</a></li>
+        <li><a href="blog.html" class="notdone">Blog</a></li>
         <li><a href="about.html">About us</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>

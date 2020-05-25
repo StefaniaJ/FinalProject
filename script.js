@@ -3,7 +3,7 @@
 // Navigation
 // Responsive Toggle Navigation
 let menuIconWrapper = document.querySelector(".menu-icon-wrapper");
-let navigation = document.querySelector(".overlay-menu");
+let navigation = document.querySelector(".mobile-menu-wrapper");
 
 menuIconWrapper.addEventListener("click", () => {
   if (navigation.style.transform != "translateX(-10%)") {
@@ -27,7 +27,7 @@ toggleIcon.addEventListener("click", () => {
 });
 
 // Close the mobile menu when you click a menu item
-let mobileClose = document.querySelector("#menu-mobile");
+let mobileClose = document.querySelector(".mobile-menu-wrapper ul");
 mobileClose.addEventListener("click", function () {
   if (navigation.style.transform != "translateX(-10%)") {
     navigation.style.transform = "translateX(-10%)";
