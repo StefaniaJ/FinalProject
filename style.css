@@ -310,30 +310,18 @@ footer ul li a.active {
 }
 
 /* Style the dropdown button mobile*/
-#dropdown {
+/* #dropdown {
   overflow: hidden;
   display: inline-block;
-}
+} */
 
 .dropdown-btn {
-  border: none;
   cursor: pointer;
-  outline: none;
-  color: var(--text-color);
-  background-color: inherit;
-  display: block;
   font-size: 18px;
   padding: 10px 0;
-  text-align: left;
   text-transform: uppercase;
-  transition: color 0.3s ease;
-  text-decoration: none;
 }
 
-/* On mouse-over-mobile */
-.dropdown-btn:hover {
-  color: red;
-}
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content- mobile */
 .dropdown-container {
   display: none;
@@ -353,14 +341,24 @@ footer ul li a.active {
   transition: all 0.3s ease;
 }
 
-/* Optional: Style the caret down icon mobile */
 .dropdown-btn i {
   padding-right: 8px;
 }
 
+.dropdown-btn:hover,
+.overlay-menu li a:hover,
+.dropdown-btn.active,
+.overlay-menu li a.active,
+.dropdown-container a:hover,
+.dropdown-container a.active {
+  color: var(--main-color);
+}
+
 /* Bottom Line */
 .overlay-menu li a:before,
-.overlay-menu li a:after {
+.dropdown-btn:before,
+.overlay-menu li a:after,
+.dropdown-btn:after {
   content: "";
   position: absolute;
   width: 0%;
@@ -369,25 +367,31 @@ footer ul li a.active {
   background: var(--white-color);
 }
 
-.overlay-menu li a:before {
+.overlay-menu li a:before,
+.dropdown-btn:before {
   left: 0;
   transition: 0.5s;
 }
 
-.overlay-menu li a:after {
+.overlay-menu li a:after,
+.dropdown-btn:after {
   background: var(--text-color);
   right: 0;
 }
 
 .overlay-menu li a:hover:before,
-.overlay-menu li a.active:before {
+.dropdown-btn:hover:before,
+.overlay-menu li a.active:before,
+.dropdown-btn.active:before {
   background: var(--main-color);
-  width: 70%;
+  width: 30%;
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .overlay-menu li a:hover:after,
-.overlay-menu li a.active:after {
+.dropdown-btn:hover:after,
+.overlay-menu li a.active:after,
+.dropdown-btn.active:after {
   background: transparent;
   width: 100%;
 }
