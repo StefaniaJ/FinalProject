@@ -101,7 +101,7 @@ footer ul li a {
 
 footer ul li a:hover,
 footer ul li a.active {
-  color: black;
+  color: var(--subtitle-color);
   transition: all 0.3s ease;
   text-decoration: underline;
 }
@@ -116,8 +116,7 @@ footer ul li a.active {
 #internship-label {
   width: 100px;
 }
-/* Style for the Hamburger & the Navigation Bar */
-/*============ Navigation ============*/
+/* Navigation on desktop and mobile -style for the bottom line was used in previous projects */
 
 nav {
   position: fixed;
@@ -146,12 +145,6 @@ nav ul {
   list-style: none;
   text-align: center;
   transition: transform 0.5s ease-out;
-}
-
-@media (max-width: 880px) {
-  nav ul {
-    display: none;
-  }
 }
 
 nav li {
@@ -417,130 +410,6 @@ nav li a.active:after,
   background-color: var(--text-color);
   color: var(--main-color);
   box-shadow: 4px 8px 13px #4a4a4a;
-}
-
-/* Media Queries for navigation */
-@media only screen and (min-width: 320px) and (max-width: 880px) {
-  /* The style for the Logo */
-  #logo {
-    margin-left: 15px;
-  }
-  .menu-icon-wrapper {
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    right: 15px;
-    top: 20px;
-    height: 23px;
-    width: 27px;
-    z-index: 12;
-  }
-  /* Icon Bars */
-  .icon-bars {
-    background: var(--text-color);
-    position: absolute;
-    left: 1px;
-    top: 45%;
-    height: 2px;
-    width: 20px;
-    transition: 0.4s;
-  }
-  .icon-bars::before {
-    background: var(--text-color);
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -8px;
-    height: 2px;
-    width: 20px;
-    transition: 0.3s width 0.4s;
-  }
-  .icon-bars::after {
-    margin-top: 0px;
-    background: var(--text-color);
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    height: 2px;
-    width: 20px;
-    transition: 0.3s width 0.4s;
-  }
-  /* Bars Shadows */
-  .icon-bars.overlay {
-    background: var(--text-color);
-    width: 20px;
-    animation: middleBar 3s infinite 0.5s;
-  }
-  @keyframes middleBar {
-    0% {
-      width: 0px;
-    }
-    50% {
-      width: 20px;
-    }
-    100% {
-      width: 0px;
-    }
-  }
-  .icon-bars.overlay::before {
-    background: var(--text-color);
-    width: 10px;
-    animation: topBar 3s infinite 0.2s;
-  }
-  @keyframes topBar {
-    0% {
-      width: 0px;
-    }
-    50% {
-      width: 10px;
-    }
-    100% {
-      width: 0px;
-    }
-  }
-  .icon-bars.overlay::after {
-    background: var(--secondary-color);
-    width: 15px;
-    animation: bottomBar 3s infinite 1s;
-  }
-  @keyframes bottomBar {
-    0% {
-      width: 0px;
-    }
-    50% {
-      width: 15px;
-    }
-    100% {
-      width: 0px;
-    }
-  }
-  /* Toggle Menu Icon */
-  .menu-icon-wrapper {
-    position: fixed;
-  }
-  .menu-icon-wrapper.toggle .icon-bars {
-    top: 5px;
-    transform: translate3d(0, 5px, 0) rotate(135deg);
-    transition-delay: 0.1s;
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  .menu-icon-wrapper.toggle .icon-bars::before {
-    top: 0;
-    transition-delay: 0.1s;
-    opacity: 0;
-  }
-  .menu-icon-wrapper.toggle .icon-bars::after {
-    top: 10px;
-    transform: translate3d(0, -10px, 0) rotate(-270deg);
-    transition-delay: 0.1s;
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  .menu-icon-wrapper.toggle .icon-bars.overlay {
-    width: 20px;
-    opacity: 0;
-    transition: all 0s ease 0s;
-  }
 }
 
 /******************************** Home page ************************************/
@@ -1071,7 +940,6 @@ p {
 
 .buttons-menu:hover,
 .buttons-menu.active {
-  /* background-color: rebeccapurple; */
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s ease;
 }
@@ -1283,6 +1151,131 @@ p {
 }
 
 /* ************************************** Media ****************************** */
+/* Media Queries for navigation */
+@media only screen and (min-width: 320px) and (max-width: 880px) {
+  /* The style for the Logo */
+  #logo {
+    margin-left: 15px;
+  }
+  .menu-icon-wrapper {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    height: 23px;
+    width: 27px;
+    z-index: 12;
+  }
+  /* Icon Bars */
+  .icon-bars {
+    background: var(--text-color);
+    position: absolute;
+    left: 1px;
+    top: 45%;
+    height: 2px;
+    width: 20px;
+    transition: 0.4s;
+  }
+  .icon-bars::before {
+    background: var(--text-color);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -8px;
+    height: 2px;
+    width: 20px;
+    transition: 0.3s width 0.4s;
+  }
+  .icon-bars::after {
+    margin-top: 0px;
+    background: var(--text-color);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: 2px;
+    width: 20px;
+    transition: 0.3s width 0.4s;
+  }
+  /* Bars Shadows */
+  .icon-bars.overlay {
+    background: var(--text-color);
+    width: 20px;
+    animation: middleBar 3s infinite 0.5s;
+  }
+  @keyframes middleBar {
+    0% {
+      width: 0px;
+    }
+    50% {
+      width: 20px;
+    }
+    100% {
+      width: 0px;
+    }
+  }
+  .icon-bars.overlay::before {
+    background: var(--text-color);
+    width: 10px;
+    animation: topBar 3s infinite 0.2s;
+  }
+  @keyframes topBar {
+    0% {
+      width: 0px;
+    }
+    50% {
+      width: 10px;
+    }
+    100% {
+      width: 0px;
+    }
+  }
+
+  .icon-bars.overlay::after {
+    background: var(--secondary-color);
+    width: 15px;
+    animation: bottomBar 3s infinite 1s;
+  }
+  @keyframes bottomBar {
+    0% {
+      width: 0px;
+    }
+    50% {
+      width: 15px;
+    }
+    100% {
+      width: 0px;
+    }
+  }
+
+  /* Toggle menu icon */
+  .menu-icon-wrapper {
+    position: fixed;
+  }
+  .menu-icon-wrapper.toggle .icon-bars {
+    top: 5px;
+    transform: translate3d(0, 5px, 0) rotate(135deg);
+    transition-delay: 0.1s;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .menu-icon-wrapper.toggle .icon-bars::before {
+    top: 0;
+    transition-delay: 0.1s;
+    opacity: 0;
+  }
+  .menu-icon-wrapper.toggle .icon-bars::after {
+    top: 10px;
+    transform: translate3d(0, -10px, 0) rotate(-270deg);
+    transition-delay: 0.1s;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .menu-icon-wrapper.toggle .icon-bars.overlay {
+    width: 20px;
+    opacity: 0;
+    transition: all 0s ease 0s;
+  }
+}
 
 @media only screen and (min-width: 400px) {
   /* HOME PAE */
@@ -1524,6 +1517,12 @@ p {
   }
   #next {
     right: 0rem;
+  }
+}
+
+@media (max-width: 880px) {
+  nav ul {
+    display: none;
   }
 }
 

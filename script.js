@@ -1,7 +1,7 @@
 "use strict";
 
 // Navigation
-// Responsive Toggle Navigation
+// Responsive Toggle Navigation (used in previous projects)
 let menuIconWrapper = document.querySelector(".menu-icon-wrapper");
 let navigation = document.querySelector(".mobile-menu-wrapper");
 
@@ -61,7 +61,8 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
-// When you scroll down 20px from the top of the page, you can see the button
+// When you scroll down 20px from the top of the page,you can see the button (used in previous projects)
+// Inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top
 window.onscroll = function () {
   scroll();
 };
@@ -74,7 +75,7 @@ function scroll() {
   }
 }
 
-// When you click on the button, you will see the top of the page
+// When you click on the button,you will see the top of the page
 function topFunction() {
   document.documentElement.scrollTop = 0;
 }
