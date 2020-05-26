@@ -1134,18 +1134,6 @@ p {
   font-size: 15px;
 }
 
-.form-group.small {
-  display: inline-block;
-  width: 34%;
-  margin-left: 11px;
-  margin-right: -13px;
-}
-
-.form-group.medium {
-  width: 65%;
-  display: inline-block;
-}
-
 .form-control {
   transition: 0.3s;
   color: #161616;
@@ -1161,7 +1149,7 @@ p {
 }
 
 /* Text -inside */
-label {
+.form-label {
   padding-left: 20px;
 }
 
@@ -1182,23 +1170,9 @@ label {
   margin-bottom: 40px;
 }
 
-/* Title-up -invalid */
-label:invalid:not(:focus):not(:placeholder-shown) + label {
-  font-size: 12px;
-  color: red;
-  opacity: 1;
-  top: -7px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-left: 35px;
-  transition: top 0.4s ease, opacity 0.4s ease;
-  background-color: white;
-  z-index: 10;
-}
-
 /* Invalid- message */
 .form-control:invalid:not(:focus):not(:placeholder-shown)
-  + label
+  + .form-label
   + .control-requirements {
   max-height: 100px;
   color: red;
@@ -1215,7 +1189,7 @@ label:invalid:not(:focus):not(:placeholder-shown) + label {
   background-position-y: 50%;
   background-size: 20px 20px;
   background-repeat: no-repeat;
-  background-image: url(img/exclamation-mark.png);
+  background-image: url(images/exclamation-mark.png);
 }
 
 .form-group input:valid:not(:placeholder-shown):not(:focus) {
@@ -1223,7 +1197,7 @@ label:invalid:not(:focus):not(:placeholder-shown) + label {
   background-position-y: 50%;
   background-size: 20px 20px;
   background-repeat: no-repeat;
-  background-image: url(img/verified.png);
+  background-image: url(images/verified.png);
 }
 
 /* ///////////VALITATION END ////////*/
