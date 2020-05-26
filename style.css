@@ -40,6 +40,7 @@ h1 {
   margin-bottom: 0.7em;
   color: var(--main-color);
   text-align: center;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -914,7 +915,8 @@ p {
 }
 
 .website-presentation-col3,
-.website-presentation-col6 {
+.website-presentation-col6,
+#markecting-products-section .website-presentation-col9 {
   margin-bottom: 2em;
 }
 
@@ -925,6 +927,13 @@ p {
 
 .products-presentation-section ul li {
   list-style: none;
+}
+
+#markecting-products-section .website-presentation-col3,
+#markecting-products-section .website-presentation-col6,
+#markecting-products-section .website-presentation-col9,
+#markecting-products-section .website-presentation-col12 {
+  margin-top: 2em;
 }
 
 /* ********************************************* REFERENCES PAGE ************************************* */
@@ -1297,6 +1306,7 @@ p {
   #title-homepage {
     font-size: 2.2em;
     margin-top: 0;
+    text-transform: unset;
   }
 
   /* REFERENCES PAGE */
