@@ -1115,6 +1115,139 @@ p {
   margin-top: 20px;
 }
 
+/* ************************************** CONTACT PAGE ****************************** */
+
+/*////////// FORM ///////////// */
+.form-group input {
+  display: block;
+  padding: 1.3rem 1.2rem;
+  font-size: 0.9rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border: 1px solid #e4e3e3;
+  border-radius: 2px;
+}
+
+.form-group {
+  position: relative;
+  font-size: 15px;
+}
+
+.form-group.small {
+  display: inline-block;
+  width: 34%;
+  margin-left: 11px;
+  margin-right: -13px;
+}
+
+.form-group.medium {
+  width: 65%;
+  display: inline-block;
+}
+
+.form-control {
+  transition: 0.3s;
+  color: #161616;
+}
+
+.form-control:invalid {
+  outline: none;
+}
+
+.form-control:focus,
+.form-control:valid {
+  outline: none;
+}
+
+/* Text -inside */
+label {
+  padding-left: 20px;
+}
+
+/* ///////////VALITATION START ////////*/
+/* error message */
+.control-requirements {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 200ms ease;
+  position: absolute;
+  top: 61px;
+  padding-left: 18px;
+}
+
+/* Input invalid -box */
+.form-control:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: red;
+  margin-bottom: 40px;
+}
+
+/* Title-up -invalid */
+label:invalid:not(:focus):not(:placeholder-shown) + label {
+  font-size: 12px;
+  color: red;
+  opacity: 1;
+  top: -7px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: 35px;
+  transition: top 0.4s ease, opacity 0.4s ease;
+  background-color: white;
+  z-index: 10;
+}
+
+/* Invalid- message */
+.form-control:invalid:not(:focus):not(:placeholder-shown)
+  + label
+  + .control-requirements {
+  max-height: 100px;
+  color: red;
+  font-size: 12px;
+}
+
+/* Valid -input -box */
+.form-control:valid:not(:focus):not(:placeholder-shown) {
+  border-color: var(--green-color);
+}
+
+.form-group input:invalid:not(:placeholder-shown):not(:focus) {
+  background-position-x: 96%;
+  background-position-y: 50%;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-image: url(img/exclamation-mark.png);
+}
+
+.form-group input:valid:not(:placeholder-shown):not(:focus) {
+  background-position-x: 96%;
+  background-position-y: 50%;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-image: url(img/verified.png);
+}
+
+/* ///////////VALITATION END ////////*/
+
+.send-message-button {
+  background-color: var(--main-color);
+  display: block;
+  min-width: 160px;
+  padding: 1em 2em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0;
+  margin-left: 15px;
+  line-height: 1;
+  text-align: center;
+  box-shadow: 0 2px 8px hsla(0, 0%, 42%, 0.4);
+  transition: box-shadow 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    transform 0.13s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
 /* ************************************** Media ****************************** */
 /* Media Queries for navigation */
 @media only screen and (min-width: 320px) and (max-width: 880px) {
