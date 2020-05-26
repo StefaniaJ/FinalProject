@@ -17,28 +17,15 @@
       rel="stylesheet"
     />
 
-    <!-- Montserrat Google Web Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
-      rel="stylesheet"
-    />
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+ 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-    />
-  </head>
 
   <!-- Body area -->
   <body>
@@ -211,6 +198,9 @@
         </form>
       </section>
 
+      <!--The div element for the map -->
+      <div id="map"></div>
+
       <!-- Testimonial slider  -->
       <section id="slider-wrapper-testimonial">
         <div class="slide-testimonial showing">
@@ -310,17 +300,16 @@
             >Egensevej 25, 2770 Kastrup</a
           >
         </p>
-
         <a href="https://www.facebook.com/wearecrunch" target="_blank">
-          <i class="fa fa-facebook-square icon-footer" aria-hidden="true"></i
+          <i class="fab fa-facebook-square"></i
         ></a>
 
         <a href="https://www.instagram.com/wearecrunchdk/" target="_blank">
-          <i class="fa fa-instagram icon-footer" aria-hidden="true"></i
+          <i class="fab fa-instagram"></i
         ></a>
 
         <a href="https://www.linkedin.com/company/crunchivs/" target="_blank">
-          <i class="fa fa-linkedin icon-footer" aria-hidden="true"></i
+          <i class="fab fa-linkedin-in"></i
         ></a>
       </div>
 
@@ -343,5 +332,32 @@
 
     <script src="script.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        var uluru = { lat: 55.62525, lng: 12.59683 };
+        // The map, centered at Uluru
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({ position: uluru, map: map });
+      }
+    </script>
+    <!--Load the API from the specified URL
+          * The async attribute allows the browser to render the page while the API loads
+          * The key parameter will contain your own API key (which is not needed for this tutorial)
+          * The callback parameter executes the initMap() function
+          -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDklbfAKttYdMX9QEh82Y-CDTso-WXu2zk&callback=initMap"
+    ></script>
   </body>
 </html>
