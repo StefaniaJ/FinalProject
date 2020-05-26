@@ -1,6 +1,7 @@
 /* Global Variables with our values */
 :root {
   --main-color: #f3601d;
+  --hover-color: #f25314;
   --subtitle-color: #212b35;
   --text-color: #595959;
   --body-color: #f8f8f8;
@@ -81,12 +82,8 @@ h4 {
 
 footer {
   background-color: var(--body-color);
-}
-
-footer {
-  background-color: var(--body-color);
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: 60px;
   color: var(--text-color);
   text-align: center;
   margin-top: 2em;
@@ -95,6 +92,16 @@ footer {
 #col2,
 #col3 {
   margin-bottom: 40px;
+}
+#col2 a i {
+  font-size: 20px;
+  margin-top: 0.5em;
+  margin-left: 5px;
+  color: var(--text-color);
+}
+
+#col2 a i:hover {
+  color: var(--main-color);
 }
 
 #footer-wrapper h5 {
@@ -121,9 +128,10 @@ footer ul li a {
 }
 
 footer ul li a:hover,
-footer ul li a.active {
-  color: var(--subtitle-color);
-  transition: all 0.3s ease;
+footer ul li a.active,
+footer p a:hover {
+  color: var(--main-color);
+  transition: all 0.2s ease;
   text-decoration: underline;
 }
 
@@ -432,54 +440,48 @@ nav li a.active:after,
   box-shadow: 4px 8px 13px #4a4a4a;
 }
 
+/* ///////// Contact us buttons  ///////// */
 .contact-buttons-wrapper {
   position: fixed;
-  bottom: 32px;
-  right: 20px;
+  bottom: 10px;
+  right: 25px;
   z-index: 99;
-  font-size: 14px;
-  border: none;
-  outline: none;
   background-color: var(--main-color);
-  color: var(--text-color);
   cursor: pointer;
-  padding: 13px;
   border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .contact-buttons-wrapper button {
-  font-size: 14px;
   border: none;
   outline: none;
   background-color: var(--main-color);
-  color: var(--text-color);
   cursor: pointer;
   padding: 13px;
   border-radius: 4px;
+  margin-right: 5px;
+}
+.contact-buttons-wrapper button:hover {
+  background-color: var(--hover-color);
 }
 
 .contact-buttons-wrapper button a {
   font-size: 14px;
-  background-color: var(--main-color);
   color: var(--white-color);
-  cursor: pointer;
-  padding: 13px;
-  border-radius: 4px;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .contact-buttons-wrapper button a i {
   margin-right: 8px;
+  display: block;
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 1.5em;
 }
 #phone-button a i {
   transform: rotate(88deg);
 }
-
-/* #Btn-top:hover {
-  background-color: var(--text-color);
-  color: var(--main-color);
-  box-shadow: 4px 8px 13px #4a4a4a;
-} */
 
 /******************************** Home page ************************************/
 
@@ -1583,11 +1585,12 @@ p {
     font-size: 30px;
   }
 
-  footer {
+  #footer-wrapper {
     text-align: left;
     padding-top: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 40px;
   }
 
   #col1 {
@@ -1603,6 +1606,7 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 4px;
   }
   #col3 {
     grid-column: 3/4;
@@ -1610,6 +1614,7 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 4px;
   }
 }
 
@@ -1683,6 +1688,14 @@ p {
     margin-bottom: 2em;
     font-size: 1.62em;
     line-height: 1.4;
+  }
+
+  #footer-wrapper {
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   /* HOME PAE */
@@ -1841,7 +1854,8 @@ p {
 }
 
 @media only screen and (min-width: 1080px) {
-  section {
+  section,
+  #footer-wrapper {
     width: 990px;
   }
 
