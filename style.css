@@ -518,11 +518,23 @@ nav li a.active:after,
   text-align: center;
   cursor: pointer;
   box-shadow: 0 2px 8px hsla(0, 0%, 42%, 0.4);
-  transition: box-shadow 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    transform 0.13s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   display: block;
   margin: 0 auto;
   margin-bottom: 2em;
+  transition: all 0.3s;
+}
+
+.button-contact:active {
+  background-color: var(--main-color);
+}
+
+.button-contact:focus {
+  outline: none;
+}
+
+.button-contact:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .first-section img,
