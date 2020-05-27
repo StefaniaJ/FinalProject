@@ -29,6 +29,10 @@ body {
   padding: 0;
 }
 
+.notdone {
+  cursor: not-allowed;
+}
+
 .notdone:hover {
   cursor: not-allowed;
 }
@@ -1338,9 +1342,14 @@ p {
   margin: 0 auto;
 }
 
-.example-references-section span {
+.example-references-section a {
   color: var(--main-color);
   font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.example-references-section a:hover {
+  text-decoration: underline;
 }
 
 .example-references-stars,

@@ -7,6 +7,7 @@ const menu = document.getElementById("buttons-wrapper");
 const allLink = document.querySelector("#all");
 const websitesLink = document.querySelector("#websites");
 const graphicsLink = document.querySelector("#graphics");
+const article = document.querySelector(".link-btn");
 const LOADING_IMAGE = "images/loading.gif";
 const link =
   "https://spreadsheets.google.com/feeds/list/1o1okTGFAMCRxodaTFQbERyFNYnITnpmdGpbW62YnBCU/od6/public/values?alt=json";
@@ -38,20 +39,13 @@ function showData(data) {
   // clone.querySelector(".description").textContent = data.gsx$description.$t;
   const img = data.gsx$image.$t;
   clone.querySelector(".card-img").setAttribute("src", "images/" + img);
+  clone.querySelector(".link-btn").href = data.gsx$url.$t;
+  clone.querySelector(".link-card").href = data.gsx$url.$t;
 
-  if (data.gsx$category.$t == "websites") {
-    clone.querySelector(".link-btn").textContent = "See website";
-    clone.querySelector(".link-btn").href = data.gsx$url.$t;
-    clone.querySelector(".link-card").href = data.gsx$url.$t;
-  }
-
-  if (data.gsx$category.$t != "websites") {
-    clone.querySelector(".link-btn").textContent = "Zoom in";
-    // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img
-
-    // for (var i = 0; i < all_links.length; i++) {
-    //   all_links[i].removeAttribute("href");
-    // }
+  if (data.gsx$url.$t == "notdone.html") {
+    clone.querySelector(".link-card").style.cursor = "not-allowed";
+    clone.querySelector(".middle button").style.cursor = "not-allowed";
+    clone.querySelector(".link-btn").style.cursor = "not-allowed";
   }
   main.appendChild(clone);
 }
