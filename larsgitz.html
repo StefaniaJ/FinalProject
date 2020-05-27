@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crunch</title>
     <meta name="description" content="Final Project - Multimedia Design" />
-    <meta name="title" content="Final Project - Multimedia Design" />
+    <title>Final Exam</title>
     <link
       rel="icon"
       type="image/png"
       href="images/Crunch-UN-logo-orange.png"
       sizes="32x32"
+    />
+    <!-- Source Sans Google Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
     />
 
     <!-- Font Awesome Icons -->
@@ -18,17 +22,12 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    /> -->
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <!-- Body area -->
-
   <body>
     <!-- Header area -->
     <header>
@@ -95,9 +94,7 @@
       </ul>
     </div>
 
-    <!-- Main content -->
-    <main id="main-grid" class="main-references">
-      <!-- Hero section -->
+    <main>
       <section class="hero-section">
         <h1 class="hero-section-col1">References</h1>
         <img
@@ -107,35 +104,50 @@
         />
       </section>
 
-      <!-- Buttons section - for filtering the data -->
-      <div class="buttons">
-        <div class="buttons-wrapper" id="buttons-wrapper">
-          <div class="buttons-menu btn active" id="all">
-            <img src="images/3-all-services-min.png" alt="All references" />
-            <p>All</p>
-          </div>
+      <section class="example-references-section">
+        <h2>Lars Gitz Architects</h2>
+        <img
+          src="images/lars-gitz1.jpg"
+          alt="Lars Gitz Architects Wordpress website"
+        />
+        <p class="content-services">
+          Lars Gitz Architects transforms their client’s ambitions into physical
+          spaces.
+        </p>
+        <p class="content-services">
+          We are proud to be the ones who put their ideas into a digital
+          representation and offer them a website.
+        </p>
+        <p class="content-services">
+          Visit the website here: <span>https://www.larsgitz.com/</span>
+        </p>
+      </section>
 
-          <div class="buttons-menu btn" id="websites">
-            <img
-              src="images/3-hight-quality-website.png"
-              alt="Websites references"
-            />
-            <p>Websites</p>
-          </div>
+      <!-- Statement from customer -->
+      <section class="statement">
+        <h3>Statement from the customer</h3>
 
-          <div class="buttons-menu btn" id="graphics">
-            <img
-              src="images/3-graphic-elements.png"
-              alt="Graphics references"
-            />
-            <p>Graphics</p>
-          </div>
-        </div>
-      </div>
+        <p class="content-services">
+          Crunch understands how to base customer needs and capabilities. I can
+          only give Crunch my best recommendation. I am so pleased and would
+          choose Crunch again at any time
+        </p>
 
-      <div id="references-wrapper">
-        <!-- The content is inserted dynamically using JavaScript -->
-      </div>
+        <p class="example-references-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i
+          ><i class="fas fa-star"></i><i class="fas fa-star"></i
+          ><i class="fas fa-star"></i>
+        </p>
+        <p class="slider-testimonial-owner example-references-owner">
+          Lars Gitz | Owner at Lars Gitz Architects
+        </p>
+
+        <button class="button-back-to-references">
+          <a href="references.html"
+            ><i class="fas fa-arrow-left"></i> Back to cases</a
+          >
+        </button>
+      </section>
 
       <!--Fixed buttons-->
       <div class="contact-buttons-wrapper">
@@ -150,7 +162,6 @@
       </div>
     </main>
 
-    <!-- Footer -->
     <footer>
       <div id="footer-wrapper">
         <div id="col1">
@@ -212,35 +223,12 @@
         </div>
       </div>
     </footer>
-
-    <!-- The template for each references  -->
-    <template id="template-references">
-      <article class="card">
-        <a class="link-card" href="#" target="_blank">
-          <img
-            class="card-img"
-            src="IMG"
-            style="width: 100%;"
-            alt="Crunch references"
-          />
-          <p class="name">Company title</p>
-          <!-- <p class="description">Description</p> -->
-
-          <div class="middle">
-            <button>
-              <a class="link-btn" href="#" target="_blank"></a>
-            </button>
-          </div>
-        </a>
-      </article>
-    </template>
-
     <!--Button go to top-->
     <button onclick="topFunction()" id="Btn-top" title="Go to top">
       <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
     </button>
 
     <script src="script.js"></script>
-    <script src="references.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>

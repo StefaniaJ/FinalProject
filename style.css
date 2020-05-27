@@ -945,7 +945,8 @@ section {
   margin-right: 10px;
 }
 
-.slider-testimonial-stars {
+.slider-testimonial-stars,
+.example-references-stars {
   color: var(--yellow-color);
   font-size: 20px;
   margin-bottom: 20px;
@@ -1324,6 +1325,60 @@ p {
 #contact-information-wrapper article p a:hover {
   color: var(--hover-color);
   text-decoration: underline;
+}
+
+/* ************************************** Example REFERENCES ****************************** */
+
+.example-references-section img {
+  display: block;
+  max-width: 50% !important;
+  margin: 0 auto;
+}
+
+.example-references-section span {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.example-references-stars,
+.example-references-owner {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.statement .content-services {
+  margin-bottom: 0.5em;
+}
+
+.button-back-to-references {
+  background-color: var(--main-color);
+  display: block;
+  min-width: 160px;
+  padding: 1em 2em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0;
+  margin-left: 15px;
+  line-height: 1;
+  text-align: center;
+  box-shadow: 0 2px 8px hsla(0, 0%, 42%, 0.4);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+}
+
+.button-back-to-references a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+.button-back-to-references:hover {
+  background-color: var(--hover-color);
 }
 
 /* ************************************** Media ****************************** */
