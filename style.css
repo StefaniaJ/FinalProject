@@ -1328,6 +1328,9 @@ p {
 }
 
 /* ************************************** Example REFERENCES ****************************** */
+.example-references-section h2 {
+  text-align: center;
+}
 
 .example-references-section img {
   display: block;
@@ -1345,6 +1348,11 @@ p {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+}
+.statement {
+  background-color: var(--body-color);
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .statement .content-services {
