@@ -50,6 +50,12 @@ let dropdown = document.getElementsByClassName("dropdown-btn");
 let i;
 
 for (i = 0; i < dropdown.length; i++) {
+  // let value = navigation.innerHTML;
+  // console.log(value);
+  // if (value.indexOf("Services") !== -1) {
+  //   break;
+  // }
+
   dropdown[i].addEventListener("click", function () {
     this.classList.toggle("active");
     let dropdownContent = this.nextElementSibling;
@@ -85,78 +91,78 @@ function topFunction() {
 // Home page - Testimonial slider
 // Inspiration: https://www.sitepoint.com/make-a-simple-javascript-slideshow-without-jquery/
 
-let controls = document.querySelectorAll(".controls");
-for (let i = 0; i < controls.length; i++) {
-  controls[i].style.display = "inline-block";
-}
+// let controls = document.querySelectorAll(".controls");
+// for (let i = 0; i < controls.length; i++) {
+//   controls[i].style.display = "inline-block";
+// }
 
-let sliderTestimonial = document.querySelectorAll(
-  "#slider-wrapper-testimonial .slide-testimonial"
-);
-let currentSlide = 0;
-let slideInterval = setInterval(nextSlide, 115000);
+// let sliderTestimonial = document.querySelectorAll(
+//   "#slider-wrapper-testimonial .slide-testimonial"
+// );
+// let currentSlide = 0;
+// let slideInterval = setInterval(nextSlide, 115000);
 
-function nextSlide() {
-  goToSlide(currentSlide + 1);
-}
+// function nextSlide() {
+//   goToSlide(currentSlide + 1);
+// }
 
-function previousSlide() {
-  goToSlide(currentSlide - 1);
-}
+// function previousSlide() {
+//   goToSlide(currentSlide - 1);
+// }
 
-function goToSlide(n) {
-  sliderTestimonial[currentSlide].className = "slide-testimonial";
-  currentSlide = (n + sliderTestimonial.length) % sliderTestimonial.length;
-  sliderTestimonial[currentSlide].className = "slide-testimonial showing";
-}
+// function goToSlide(n) {
+//   sliderTestimonial[currentSlide].className = "slide-testimonial";
+//   currentSlide = (n + sliderTestimonial.length) % sliderTestimonial.length;
+//   sliderTestimonial[currentSlide].className = "slide-testimonial showing";
+// }
 
-let next = document.getElementById("next");
-let previous = document.getElementById("previous");
+// let next = document.getElementById("next");
+// let previous = document.getElementById("previous");
 
-next.onclick = function () {
-  nextSlide();
-};
-previous.onclick = function () {
-  previousSlide();
-};
+// next.onclick = function () {
+//   nextSlide();
+// };
+// previous.onclick = function () {
+//   previousSlide();
+// };
 
 // Home page - Price slider
 // Inspiration: https://www.sitepoint.com/make-a-simple-javascript-slideshow-without-jquery/
 
-let controlsPrice = document.querySelectorAll(".price-wrapper");
-for (let i = 0; i < controlsPrice.length; i++) {
-  controlsPrice[i].style.display = "inline-block";
-}
+// let controlsPrice = document.querySelectorAll(".price-wrapper");
+// for (let i = 0; i < controlsPrice.length; i++) {
+//   controlsPrice[i].style.display = "inline-block";
+// }
 
-let sliderPrice = document.querySelectorAll(
-  "#slider-wrapper-price .slide-price"
-);
-let currentSlidePrice = 0;
-let slideIntervalPrice = setInterval(nextSlidePrice, 5000);
+// let sliderPrice = document.querySelectorAll(
+//   "#slider-wrapper-price .slide-price"
+// );
+// let currentSlidePrice = 0;
+// let slideIntervalPrice = setInterval(nextSlidePrice, 5000);
 
-function nextSlidePrice() {
-  goToSlidePrice(currentSlidePrice + 1);
-}
+// function nextSlidePrice() {
+//   goToSlidePrice(currentSlidePrice + 1);
+// }
 
-function previousSlidePrice() {
-  goToSlidePrice(currentSlidePrice - 1);
-}
+// function previousSlidePrice() {
+//   goToSlidePrice(currentSlidePrice - 1);
+// }
 
-function goToSlidePrice(n) {
-  sliderPrice[currentSlidePrice].className = "slide-price";
-  currentSlidePrice = (n + sliderPrice.length) % sliderPrice.length;
-  sliderPrice[currentSlidePrice].className = "slide-price showing-price";
-}
+// function goToSlidePrice(n) {
+//   sliderPrice[currentSlidePrice].className = "slide-price";
+//   currentSlidePrice = (n + sliderPrice.length) % sliderPrice.length;
+//   sliderPrice[currentSlidePrice].className = "slide-price showing-price";
+// }
 
-let nextPrice = document.getElementById("see-next-price");
-let previousPrice = document.getElementById("see-previous-price");
+// let nextPrice = document.getElementById("see-next-price");
+// let previousPrice = document.getElementById("see-previous-price");
 
-nextPrice.onclick = function () {
-  nextSlidePrice();
-};
-previousPrice.onclick = function () {
-  previousSlidePrice();
-};
+// nextPrice.onclick = function () {
+//   nextSlidePrice();
+// };
+// previousPrice.onclick = function () {
+//   previousSlidePrice();
+// };
 
 //  /////////////////////
 
@@ -171,24 +177,36 @@ previousPrice.onclick = function () {
 //   .then((e) => e.json())
 //   .then((e) => console.log(e));
 
-// const form = document.querySelector("form");
+const submitBtn = document.querySelector("#submit-form-btn");
+const form = document.querySelector("#form");
 
-// const data = {
-//   name: form.elements.name.value,
-//   email: form.elements.email.value,
-//   phone: form.elements.phone.value,
-//   message: form.elements.message.value,
-// };
+submitBtn.addEventListener("click", () => {
+  const data = {
+    name: document.querySelector("#name").value,
+    email: document.querySelector("#email").value,
+    phone: document.querySelector("#phone").value,
+    message: document.querySelector("#message").value,
+  };
 
-// const postData = JSON.stringify(data);
-// fetch("https://crunchdatabase-8fb6.restdb.io/rest/userscontactinfo", {
-//   method: "post",
-//   headers: {
-//     "Content-Type": "application/json; charset=utf-8",
-//     "x-apikey": "5ecaa66f4a532801892ed711",
-//     "cache-control": "no-cache",
-//   },
-//   body: postData,
-// })
-//   .then((e) => e.json())
-//   .then((data) => console.log(data));
+  const postData = JSON.stringify(data);
+  console.log(data);
+  fetch("https://crunchdatabase-8fb6.restdb.io/rest/userscontactinfo", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5ecaa66f4a532801892ed711",
+      "cache-control": "no-cache",
+    },
+    body: postData,
+  })
+    .then((e) => {
+      return e.json();
+    })
+    .then((data) => {
+      window.location.href = "index.html";
+      console.log(data);
+    })
+    .catch((i) => {
+      console.log(i);
+    });
+});

@@ -124,10 +124,7 @@
           alt="Adam Kischinovsky, CEO at Crunch"
         />
 
-        <form
-          action="https://crunchdatabase-8fb6.restdb.io/rest/userscontactinfo"
-          class="website-presentation-col3"
-        >
+        <div class="website-presentation-col3" id="form">
           <div class="form-group">
             <label for="name" class="form-label">Name</label>
             <input
@@ -188,6 +185,7 @@
           </div>
 
           <button
+            id="submit-form-btn"
             type="submit"
             name="submit"
             value="SEND MESSAGE"
@@ -195,7 +193,7 @@
           >
             SEND MESSAGE
           </button>
-        </form>
+        </div>
       </section>
 
       <div id="color">
@@ -389,9 +387,13 @@
     </button>
 
     <script src="script.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDklbfAKttYdMX9QEh82Y-CDTso-WXu2zk&callback=initMap"
+    ></script>
 
     <script>
       // Initialize and add the map
@@ -407,15 +409,5 @@
         var marker = new google.maps.Marker({ position: uluru, map: map });
       }
     </script>
-    <!--Load the API from the specified URL
-          * The async attribute allows the browser to render the page while the API loads
-          * The key parameter will contain your own API key (which is not needed for this tutorial)
-          * The callback parameter executes the initMap() function
-          -->
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDklbfAKttYdMX9QEh82Y-CDTso-WXu2zk&callback=initMap"
-    ></script>
   </body>
 </html>

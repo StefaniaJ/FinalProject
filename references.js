@@ -16,15 +16,22 @@ const link =
 
 // function to fetch the references list
 
+// Create the Loading Indicator
+let loadingIndicator = "";
+createLoadingIndicator();
+
 function start() {
   loadJSON(link);
   setLoading();
 }
 
 function loadJSON(link) {
+  setLoading();
+
   fetch(link)
     .then((e) => e.json())
     .then((data) => data.feed.entry.forEach(showData));
+
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 }
@@ -53,6 +60,7 @@ function showData(data) {
 // Filter Websites
 websitesLink.addEventListener("click", () => {
   main.innerHTML = "";
+  createLoadingIndicator();
   fetch(link)
     .then((e) => e.json())
     .then((data) =>
@@ -66,6 +74,7 @@ loadJSON(link);
 // Filter Graphics
 graphicsLink.addEventListener("click", () => {
   main.innerHTML = "";
+  createLoadingIndicator();
   fetch(link)
     .then((e) => e.json())
     .then((data) =>
@@ -77,6 +86,7 @@ graphicsLink.addEventListener("click", () => {
 
 allLink.addEventListener("click", () => {
   main.innerHTML = "";
+  createLoadingIndicator();
   loadJSON(link);
 });
 
@@ -89,10 +99,6 @@ for (let i = 0; i < items.length; i++) {
     this.className += " active";
   });
 }
-
-// Create the Loading Indicator
-let loadingIndicator = "";
-createLoadingIndicator();
 
 // function to display the loading image
 function setLoading() {
