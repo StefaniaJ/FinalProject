@@ -62,7 +62,8 @@ h3 {
   text-align: left;
   color: var(--subtitle-color);
   margin-bottom: 2em;
-  font-size: 1em;
+  /* font-size: 1em; */
+  font-size: 1.2em;
   line-height: 1.2;
   letter-spacing: -0.25px;
   font-weight: 700;
@@ -72,7 +73,8 @@ h3 {
   color: var(--subtitle-color);
   margin-bottom: 2em;
   font-size: 1em;
-  line-height: 1.2;
+  /* line-height: 1.2; */
+  line-height: 1.6;
   letter-spacing: -0.25px;
   font-weight: 500;
   max-width: 500px;
@@ -82,6 +84,10 @@ h3 {
 
 h4 {
   font-size: 15px;
+}
+#indicator {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer {
@@ -172,7 +178,7 @@ nav {
 }
 
 nav ul {
-  padding-top: 30px;
+  padding-top: 25px;
   padding-right: 50px;
   display: inline-block;
   list-style: none;
@@ -209,6 +215,7 @@ nav li a {
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+  margin: -1px 0px;
   color: var(--text-color);
 }
 
@@ -1764,6 +1771,10 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(187px, 1fr));
   }
 
+  .main-services-card-description {
+    min-height: 123px;
+  }
+
   #support-clip-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -2000,6 +2011,12 @@ p {
   }
 
   /* HOME page */
+
+  /* Main service */
+  .main-services-card-description {
+    min-height: 97px;
+  }
+
   /* Benefits */
   #benefits-col2 ul li span {
     padding-left: 0px;
