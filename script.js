@@ -180,6 +180,88 @@ function topFunction() {
 const submitBtn = document.querySelector("#submit-form-btn");
 const form = document.querySelector("#form");
 
+function invalidateInput(
+  input,
+  inputForm,
+  errorMessage,
+  inputPattern = null,
+  inputErrorMessage = null
+) {
+  appendError(inputForm, errorMessage);
+
+  input.style.backgroundPositionX = "96%";
+  input.style.backgroundPositionY = "50%";
+  input.style.borderColor = "#ff99a5";
+  input.style.backgroundSize = "20px 20px";
+  input.style.backgroundRepeat = "no-repeat";
+  input.style.backgroundImage = "url(images/exclamation-mark.png)";
+
+  let typingTimer = null;
+  const typingCheckInterval = 500;
+
+  function inputEventListenerHandler() {
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(() => {
+      if (this.value.length > 0) {
+        if (inputPattern && inputPattern.test(input.value))
+          validateInput(input, inputForm);
+        else if (inputPattern && !inputPattern.test(input.value))
+          invalidateInput(
+            input,
+            inputForm,
+            inputErrorMessage,
+            inputPattern,
+            inputErrorMessage
+          );
+        else if (!inputPattern) validateInput(input, inputForm);
+      } else restoreInput(input, inputForm);
+    }, typingCheckInterval);
+  }
+
+  input.removeEventListener("input", inputEventListenerHandler);
+  input.addEventListener("input", inputEventListenerHandler);
+}
+function validateInput(input, inputForm) {
+  removeError(inputForm);
+
+  input.style.backgroundPositionX = "96%";
+  input.style.backgroundPositionY = "50%";
+  input.style.borderColor = "#15a32b";
+  input.style.backgroundSize = "20px 20px";
+  input.style.backgroundRepeat = "no-repeat";
+  input.style.backgroundImage = "url(images/verified.png)";
+}
+function restoreInput(input, inputForm) {
+  removeError(inputForm);
+
+  input.style.borderColor = "#deddd9";
+  input.style.backgroundRepeat = "no-repeat";
+  input.style.backgroundImage = "";
+}
+
+function appendError(item, errorMessage) {
+  removeError(item);
+
+  const errorDiv = document.createElement("DIV");
+  errorDiv.className = "errorDiv";
+  errorDiv.style.backgroundColor = "#ff99a5";
+  errorDiv.style.width = "387px";
+  errorDiv.style["text-align"] = "center";
+  errorDiv.style.margin = "auto";
+
+  errorDiv.innerHTML = errorMessage;
+  item.appendChild(errorDiv);
+}
+
+function removeError(item) {
+  const errorDiv = item.getElementsByClassName("errorDiv")[0];
+  if (errorDiv) {
+    errorDiv.innerHTML = "";
+    errorDiv.style.height = "0px";
+    item.removeChild(errorDiv);
+  }
+}
+
 submitBtn.addEventListener("click", () => {
   const data = {
     name: document.querySelector("#name").value,
@@ -188,6 +270,69 @@ submitBtn.addEventListener("click", () => {
     message: document.querySelector("#message").value,
   };
 
+  const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+  let validationPassed = true;
+
+  if (!data.name) {
+    invalidateInput(
+      document.getElementById("name"),
+      document.getElementById("name-group"),
+      "Name field is required"
+    );
+    validationPassed = false;
+  }
+  if (!data.email) {
+    invalidateInput(
+      document.getElementById("email"),
+      document.getElementById("email-group"),
+      "Email field is required",
+      emailPattern,
+      "Please enter valid email"
+    );
+    validationPassed = false;
+  } else if (!emailPattern.test(data.email)) {
+    invalidateInput(
+      document.getElementById("email"),
+      document.getElementById("email-group"),
+      "Please enter valid email",
+      emailPattern,
+      "Please enter valid email"
+    );
+    validationPassed = false;
+  }
+  if (!data.phone) {
+    invalidateInput(
+      document.getElementById("phone"),
+      document.getElementById("phone-group"),
+      "Phone field is required",
+      phonePattern,
+      "Please enter valid phone number"
+    );
+    validationPassed = false;
+  } else if (!phonePattern.test(data.phone)) {
+    invalidateInput(
+      document.getElementById("phone"),
+      document.getElementById("phone-group"),
+      "Please enter valid phone number",
+      phonePattern,
+      "Please enter valid phone number"
+    );
+    validationPassed = false;
+  }
+  if (!data.message) {
+    invalidateInput(
+      document.getElementById("message"),
+      document.getElementById("message-group"),
+      "Message field is required"
+    );
+    validationPassed = false;
+  }
+
+  if (!validationPassed) return;
+
+  console.log("Validation passed");
   const postData = JSON.stringify(data);
   console.log(data);
   fetch("https://crunchdatabase-8fb6.restdb.io/rest/userscontactinfo", {

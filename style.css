@@ -1237,13 +1237,13 @@ p {
 }
 
 /* Invalid- message */
-.form-control:invalid:not(:focus):not(:placeholder-shown)
-  + .form-label
-  + .control-requirements {
-  max-height: 100px;
-  color: red;
-  font-size: 12px;
-}
+/*.form-control:invalid:not(:focus):not(:placeholder-shown)*/
+/*+ .form-label*/
+/*+ .control-requirements {*/
+/*max-height: 100px;*/
+/*color: red;*/
+/*font-size: 12px;*/
+/*}*/
 
 /* Valid -input -box */
 .form-control:valid:not(:focus):not(:placeholder-shown) {
