@@ -108,29 +108,31 @@
     </div>
 
     <main>
-      <section class="first-section">
-        <div class="first-section-col1">
-          <!-- <h1>We build amazing digital experience</h1> -->
-          <h1 id="title-homepage">
-            Amazing, custom and personal digital experience
-          </h1>
-          <!-- <p>
+      <div class="max">
+        <section class="first-section">
+          <div class="first-section-col1">
+            <!-- <h1>We build amazing digital experience</h1> -->
+            <h1 id="title-homepage">
+              Amazing, custom and personal digital experience
+            </h1>
+            <!-- <p>
               Make your business more than just a website with us because we put
               great emphasis on each and every customer.
             </p> -->
-          <p>
-            With us your business is more than just a website because we put
-            great emphasis on each customer.
-          </p>
-          <button class="button-contact"><a href="#">Book meeting</a></button>
-        </div>
-        <img
-          class="first-section-col2"
-          src="images/Header_home2.png"
-          alt="Crunch web digital agency in Copenhagen, medium prices"
-        />
-        <!-- <button class="button-contact"><a href="#">Book meeting</a></button> -->
-      </section>
+            <p>
+              With us your business is more than just a website because we put
+              great emphasis on each customer.
+            </p>
+            <button class="button-contact"><a href="#">Book meeting</a></button>
+          </div>
+          <img
+            class="first-section-col2"
+            src="images/Header_home2.png"
+            alt="Crunch web digital agency in Copenhagen, medium prices"
+          />
+          <!-- <button class="button-contact"><a href="#">Book meeting</a></button> -->
+        </section>
+      </div>
 
       <!-- Main services  -->
       <section>
@@ -202,9 +204,13 @@
             <ul>
               <li><i class="fas fa-check-circle"></i>Personal service</li>
               <li><i class="fas fa-check-circle"></i>Competitive prices</li>
-              <li><i class="fas fa-check-circle"></i>You own the solution</li>
+
               <li>
                 <i class="fas fa-check-circle"></i>All services under one roof
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Experience with all
+                <span>industries</span>
               </li>
             </ul>
           </div>
@@ -212,11 +218,9 @@
           <div id="benefits-col2">
             <ul>
               <li><i class="fas fa-check-circle"></i>No hidden fees</li>
-              <li>
-                <i class="fas fa-check-circle"></i>Experience with all
-                industries
-              </li>
+
               <li><i class="fas fa-check-circle"></i>Get your unique design</li>
+              <li><i class="fas fa-check-circle"></i>You own the solution</li>
               <li>
                 <i class="fas fa-check-circle"></i>Opportunity for long-term
                 <span>cooperation</span>
@@ -602,63 +606,74 @@
         </button>
       </section>
 
-      <section>
-        <form id="short-form">
-          <section>
-            <label for="name">
-              Name:
-              <input type="text" id="name" name="name" minlength="2" required />
-            </label>
-          </section>
+      <section class="products-presentation-section" id="contact-section">
+        <img
+          class="website-presentation-col2"
+          src="images/crunch-owner-Adam.jpg"
+          alt="Adam Kischinovsky, CEO at Crunch"
+        />
 
-          <section>
-            <label for="email">
-              Email:
-              <input
-                type="email"
-                id="email"
-                name="email"
-                pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
-                required
-              />
-            </label>
-          </section>
-
-          <section>
-            <label for="phone">
-              Phone:
-              <input
-                type="tel"
-                pattern="[0-9]*"
-                id="phone"
-                name="phone"
-                class="phone"
-                required
-              />
-            </label>
-          </section>
-          <section>
-            <label for="message">
-              Message:
-              <input
-                type="textarea"
-                id="message"
-                name="message"
-                class="message"
-              />
-            </label>
-          </section>
-
-          <section>
+        <div class="website-presentation-col3" id="form">
+          <div class="form-group" id="name-group">
+            <label for="name" class="form-label">Name</label>
             <input
-              type="submit"
-              value="Submit"
-              name="submit"
-              class="submitBtn"
-              id="addSinger"
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder=" "
+              minlength="2"
+              required
             />
-          </section>
-        </form>
+          </div>
+
+          <div class="form-group" id="email-group">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
+              class="form-control"
+              placeholder=" "
+              required
+            />
+          </div>
+
+          <div class="form-group" id="phone-group">
+            <label for="phone" class="form-label"> Phone</label>
+            <input
+              type="tel"
+              pattern="[0-9]*"
+              id="phone"
+              name="phone"
+              class="form-control"
+              placeholder=" "
+              required
+            />
+          </div>
+
+          <div class="form-group" id="message-group">
+            <label for="message" class="form-label">Message</label>
+            <input
+              type="text"
+              id="message"
+              name="message"
+              class="form-control"
+              placeholder=" "
+            />
+          </div>
+
+          <button
+            id="submit-form-btn"
+            type="submit"
+            name="submit"
+            value="SEND MESSAGE"
+            class="send-message-button"
+          >
+            SEND MESSAGE
+          </button>
+        </div>
       </section>
 
       <!--Fixed buttons-->

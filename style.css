@@ -36,6 +36,16 @@ body {
 .notdone:hover {
   cursor: not-allowed;
 }
+
+.max {
+  width: 100%;
+  background-color: #fdf7f2;
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  color: var(--main-color);
+}
+
 h1 {
   font-size: 2.4em;
   font-weight: 700;
@@ -91,12 +101,12 @@ h4 {
 }
 
 footer {
-  background-color: var(--body-color);
+  background-color: #fdf7f2;
   width: 100%;
   padding-bottom: 60px;
-  color: var(--text-color);
+  color: var(--subtitle-color);
   text-align: center;
-  margin-top: 2em;
+  margin-top: 4em;
 }
 #col1,
 #col2,
@@ -107,7 +117,7 @@ footer {
   font-size: 20px;
   margin-top: 0.5em;
   margin-left: 5px;
-  color: var(--text-color);
+  color: var(--subtitle-color);
 }
 
 #col2 a i:hover {
@@ -119,11 +129,12 @@ footer {
   letter-spacing: 1px;
   font-weight: bold;
   color: var(--main-color);
+  font-size: 1.2em;
 }
 
 footer a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--subtitle-color);
 }
 
 footer ul {
@@ -304,7 +315,7 @@ nav li a.active:after,
 
 /********* Responsive Mobile Menu *********/
 .mobile-menu-wrapper {
-  background: var(--white-color);
+  background-color: #fbe8d8;
   color: var(--text-color);
   justify-content: center;
   position: fixed;
@@ -500,10 +511,12 @@ nav li a.active:after,
 #title-homepage {
   text-align: left;
   font-size: 2em;
+  text-transform: none;
 }
 
 .first-section {
   margin-top: 4em;
+  background-color: #fdf7f2;
 }
 
 .first-section p {
@@ -533,6 +546,8 @@ nav li a.active:after,
   margin: 0 auto;
   margin-bottom: 2em;
   transition: all 0.3s;
+  margin-top: 3em;
+  font-size: 1.2em;
 }
 
 .button-contact:active {
@@ -546,6 +561,10 @@ nav li a.active:after,
 .button-contact:hover {
   background-color: var(--hover-color);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.first-section img {
+  align-self: center;
 }
 
 .first-section img,
@@ -621,8 +640,9 @@ nav li a.active:after,
   margin-bottom: 40px;
 }
 
-#benefits-col2 span {
-  padding-left: 25px;
+#benefits-col2 span,
+#benefits-col1 span {
+  padding-left: 28px;
 }
 
 #benefits-template ul {
@@ -633,6 +653,11 @@ nav li a.active:after,
 #benefits-template ul li i {
   color: var(--green-color);
   margin-right: 8px;
+  font-size: 1.3em;
+}
+
+#benefits-template ul li {
+  line-height: 1.8em;
 }
 
 /************ Process  *************** */
@@ -951,7 +976,7 @@ section {
 }
 
 .slider-testimonial-description i {
-  color: var(--blue-color);
+  color: var(--main-color);
   font-size: 30px;
   margin-right: 10px;
 }
@@ -977,6 +1002,7 @@ p {
 /* ********************************************* SERVICES  ************************************* */
 .hero-section {
   margin-top: 4em;
+  background-color: #fdf7f2;
 }
 
 .products-presentation-section img {
@@ -1535,7 +1561,8 @@ p {
 @media only screen and (min-width: 400px) {
   /* HOME PAE */
   /* Benefits */
-  #benefits-col2 span {
+  #benefits-col2 span,
+  #benefits-col1 span {
     padding-left: 0px;
   }
 
@@ -1681,8 +1708,9 @@ p {
     margin-left: auto;
   }
 
-  #benefits-col2 span {
-    padding-left: 25px;
+  #benefits-col2 span,
+  #benefits-col1 span {
+    padding-left: 28px;
   }
 
   /* Testimonial slider */
@@ -1719,6 +1747,7 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding-bottom: 40px;
+    padding-top: 40px;
   }
 
   #col1 {
@@ -1748,33 +1777,8 @@ p {
 
 @media only screen and (min-width: 700px) {
   /* HOME PAGE */
-  /* First section */
-  .first-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
 
-  .first-section-col1 {
-    grid-column: 1/2;
-  }
-
-  .first-section-col2 {
-    grid-column: 2/3;
-  }
-
-  .button-contact {
-    margin: 0;
-    margin-bottom: 0;
-  }
-  /* Main services */
-  #main-services-template {
-    grid-template-columns: repeat(auto-fit, minmax(187px, 1fr));
-  }
-
-  .main-services-card-description {
-    min-height: 123px;
-  }
-
+  /* Suopport clip */
   #support-clip-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1831,6 +1835,40 @@ p {
   }
 
   /* HOME PAE */
+
+  /* First section */
+  .first-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .first-section-col1 {
+    grid-column: 1/2;
+  }
+
+  .first-section-col2 {
+    grid-column: 2/3;
+  }
+
+  .button-contact {
+    margin: 0;
+    margin-bottom: 0;
+  }
+
+  /* Main services */
+  #main-services-template {
+    grid-template-columns: repeat(auto-fit, minmax(187px, 1fr));
+  }
+
+  .main-services-card-description {
+    min-height: 123px;
+  }
+
+  /* Benefits */
+
+  #benefits-col1 span {
+    padding-left: 0px;
+  }
 
   /* Process */
   #process-template {
@@ -2012,9 +2050,17 @@ p {
 
   /* HOME page */
 
+  .button-contact {
+    margin-top: 3em;
+  }
+
   /* Main service */
   .main-services-card-description {
     min-height: 97px;
+  }
+
+  .main-services-card {
+    max-width: 270px;
   }
 
   /* Benefits */
