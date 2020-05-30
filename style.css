@@ -603,7 +603,8 @@ nav li a.active:after,
 
 .main-services-card-title {
   font-weight: bold;
-  font-size: 1.125em;
+  /* font-size: 1.125em; */
+  font-size: 1.3em;
   color: var(--subtitle-color);
   margin-bottom: 0.66em;
   line-height: 1.2;
@@ -620,6 +621,7 @@ nav li a.active:after,
   color: var(--main-color);
   text-decoration: none;
   text-transform: uppercase;
+  font-size: 1.2em;
 }
 
 .button-read {
