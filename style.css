@@ -205,7 +205,7 @@ nav li {
 nav li a {
   color: var(--text-color);
   display: block;
-  font-size: 12px;
+  font-size: 1em;
   letter-spacing: 1px;
   margin: 0 10px;
   padding: 0 4px;
@@ -221,13 +221,13 @@ nav li a {
 }
 
 .dropdown-desktop-btn {
-  font-size: 12px;
+  font-size: 1em;
   letter-spacing: 1px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
-  margin: -1px 0px;
+  margin: -2px 0px;
   color: var(--text-color);
 }
 
@@ -248,7 +248,7 @@ nav li a {
   text-decoration: none;
   display: block;
   text-align: left;
-  font-size: 12px;
+  font-size: 0.8em;
   text-transform: uppercase;
   line-height: 1.2;
   transition: all 0.3s ease;
