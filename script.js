@@ -27,21 +27,22 @@ toggleIcon.addEventListener("click", () => {
 });
 
 // Close the mobile menu when you click a menu item
-let mobileClose = document.querySelector(".mobile-menu-wrapper ul");
+let mobileClose = document.querySelector(".mobile-menu-wrapper");
 mobileClose.addEventListener("click", function () {
   if (navigation.style.transform != "translateX(-10%)") {
     navigation.style.transform = "translateX(-10%)";
     navigation.style.transition = "transform 0.2s ease-out";
-  } else {
-    navigation.style.transform = "translateX(-100%)";
-    navigation.style.transition = "transform 0.2s ease-out";
   }
+  //  else {
+  //   navigation.style.transform = "translateX(-100%)";
+  //   navigation.style.transition = "transform 0.2s ease-out";
+  // }
 
-  if (toggleIcon.className != "menuIconWrapper toggle") {
-    toggleIcon.className += " toggle";
-  } else {
-    toggleIcon.className = "menuIconWrapper";
-  }
+  // if (toggleIcon.className != "menuIconWrapper toggle") {
+  //   toggleIcon.className += " toggle";
+  // } else {
+  //   toggleIcon.className = "menuIconWrapper";
+  // }
 });
 
 // Loop through all dropdown buttons to toggle between hiding and showing its dropdown content
@@ -180,47 +181,55 @@ function topFunction() {
 const submitBtn = document.querySelector("#submit-form-btn");
 const form = document.querySelector("#form");
 
+// Invalidates input and attaches new event listeners
 function invalidateInput(
   input,
   inputForm,
   errorMessage,
   inputPattern = null,
-  inputErrorMessage = null
+  inputErrorMessage = null,
+  initializing = false
 ) {
-  appendError(inputForm, errorMessage);
-
-  input.style.backgroundPositionX = "96%";
-  input.style.backgroundPositionY = "50%";
-  input.style.borderColor = "#ff99a5";
-  input.style.backgroundSize = "20px 20px";
-  input.style.backgroundRepeat = "no-repeat";
-  input.style.backgroundImage = "url(images/exclamation-mark.png)";
-
-  let typingTimer = null;
-  const typingCheckInterval = 500;
-
-  function inputEventListenerHandler() {
-    clearTimeout(typingTimer);
-    typingTimer = setTimeout(() => {
-      if (this.value.length > 0) {
-        if (inputPattern && inputPattern.test(input.value))
-          validateInput(input, inputForm);
-        else if (inputPattern && !inputPattern.test(input.value))
-          invalidateInput(
-            input,
-            inputForm,
-            inputErrorMessage,
-            inputPattern,
-            inputErrorMessage
-          );
-        else if (!inputPattern) validateInput(input, inputForm);
-      } else restoreInput(input, inputForm);
-    }, typingCheckInterval);
+  function focusEventHandler() {
+    restoreInput(input, inputForm);
   }
 
-  input.removeEventListener("input", inputEventListenerHandler);
-  input.addEventListener("input", inputEventListenerHandler);
+  if (!initializing) {
+    // On initialization we don't need any styling, just attaching events
+    appendError(inputForm, errorMessage);
+
+    input.style.backgroundPositionX = "96%";
+    input.style.backgroundPositionY = "50%";
+    input.style.borderColor = "#ff99a5";
+    input.style.backgroundSize = "20px 20px";
+    input.style.backgroundRepeat = "no-repeat";
+    input.style.backgroundImage = "url(images/exclamation-mark.png)";
+  } else {
+    input.addEventListener("focus", focusEventHandler); // Add on focus event only on initialization
+  }
+
+  function inputEventListenerHandler() {
+    if (this.value.length > 0) {
+      if (inputPattern && inputPattern.test(input.value))
+        validateInput(input, inputForm);
+      // If input passed regex test then validating it
+      else if (inputPattern && !inputPattern.test(input.value))
+        invalidateInput(
+          input,
+          inputForm,
+          inputErrorMessage,
+          inputPattern,
+          inputErrorMessage
+        );
+      // Invalidating input if it didn't pass regex test
+      else if (!inputPattern) validateInput(input, inputForm); // If no regex test has to be done simply validating input
+    } else restoreInput(input, inputForm); // If input has no symbols inside restoring it's default look
+  }
+
+  input.removeEventListener("focusout", inputEventListenerHandler); // Clearing out event listener's input event just to make sure nothing stacks
+  input.addEventListener("focusout", inputEventListenerHandler); // Adding new input's event listener
 }
+// Applies validation passed styles to input, removes error div
 function validateInput(input, inputForm) {
   removeError(inputForm);
 
@@ -229,8 +238,14 @@ function validateInput(input, inputForm) {
   input.style.borderColor = "#15a32b";
   input.style.backgroundSize = "20px 20px";
   input.style.backgroundRepeat = "no-repeat";
-  input.style.backgroundImage = "url(images/verified.png)";
+  input.style.setProperty(
+    "background-image",
+    "url(images/verified.png)",
+    "important"
+  );
 }
+
+// Restores input to it's default look
 function restoreInput(input, inputForm) {
   removeError(inputForm);
 
@@ -239,13 +254,14 @@ function restoreInput(input, inputForm) {
   input.style.backgroundImage = "";
 }
 
+// Appends error div to input's wrapper
 function appendError(item, errorMessage) {
   removeError(item);
 
   const errorDiv = document.createElement("DIV");
   errorDiv.className = "errorDiv";
   errorDiv.style.backgroundColor = "#ff99a5";
-  errorDiv.style.width = "387px";
+  errorDiv.style.width = "90%";
   errorDiv.style["text-align"] = "center";
   errorDiv.style.margin = "auto";
 
@@ -253,6 +269,7 @@ function appendError(item, errorMessage) {
   item.appendChild(errorDiv);
 }
 
+// Removes error's div from input's wrapper
 function removeError(item) {
   const errorDiv = item.getElementsByClassName("errorDiv")[0];
   if (errorDiv) {
@@ -262,6 +279,45 @@ function removeError(item) {
   }
 }
 
+const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+// Attaching on input events form each
+function initializeFormEvents() {
+  invalidateInput(
+    document.getElementById("name"),
+    document.getElementById("name-group"),
+    "Name field is required",
+    null,
+    null,
+    true
+  );
+  invalidateInput(
+    document.getElementById("email"),
+    document.getElementById("email-group"),
+    "Email field is required",
+    emailPattern,
+    "Please enter valid email",
+    true
+  );
+  invalidateInput(
+    document.getElementById("phone"),
+    document.getElementById("phone-group"),
+    "Phone field is required",
+    phonePattern,
+    "Please enter valid phone number",
+    true
+  );
+  invalidateInput(
+    document.getElementById("message"),
+    document.getElementById("message-group"),
+    "Message field is required",
+    null,
+    null,
+    true
+  );
+}
+
 submitBtn.addEventListener("click", () => {
   const data = {
     name: document.querySelector("#name").value,
@@ -269,9 +325,6 @@ submitBtn.addEventListener("click", () => {
     phone: document.querySelector("#phone").value,
     message: document.querySelector("#message").value,
   };
-
-  const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 
   let validationPassed = true;
 

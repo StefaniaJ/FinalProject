@@ -135,7 +135,6 @@
               name="name"
               class="form-control"
               placeholder=" "
-              minlength="2"
               required
             />
           </div>
@@ -143,7 +142,7 @@
           <div class="form-group" id="email-group">
             <label for="email" class="form-label">Email</label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$"
@@ -408,6 +407,9 @@
     ></script>
 
     <script>
+      // This event initialez out event listeners after document is loaded, this way we are making sure that elements are actually there when we are trying to attach event listeners to them
+      window.onload = initializeFormEvents;
+
       // Initialize and add the map
       function initMap() {
         // The location of Uluru

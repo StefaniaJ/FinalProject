@@ -29,6 +29,31 @@ body {
   padding: 0;
 }
 
+@-webkit-keyframes autofill {
+  to {
+    color: #666;
+    background-image: url(images/verified.png) !important;
+  }
+}
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
+  /*transition: background-color 5000s ease-in-out 0s;*/
+  background-image: url(images/verified.png) !important;
+}
+/*input.is-valid:-webkit-autofill {*/
+/*-webkit-animation-name: autofill-valid;*/
+/*-webkit-animation-fill-mode: both;*/
+/*}*/
+
+/*input.is-invalid:-webkit-autofill {*/
+/*-webkit-animation-name: autofill-invalid;*/
+/*-webkit-animation-fill-mode: both;*/
+/*}*/
+
 .notdone {
   cursor: not-allowed;
 }
@@ -195,7 +220,7 @@ nav ul {
   list-style: none;
   text-align: center;
   transition: transform 0.5s ease-out;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
 }
 
 nav li {
