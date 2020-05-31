@@ -474,7 +474,7 @@ nav li a.active:after,
 }
 
 /* breadcrumb */
-ul.breadcrumb {
+.breadcrumb {
   padding: 18px 16px;
   list-style: none;
   display: block;
@@ -483,16 +483,16 @@ ul.breadcrumb {
   line-height: unset;
   background-color: white;
 }
-ul.breadcrumb li {
+.breadcrumb li {
   display: inline;
   font-size: 0.9em;
 }
-ul.breadcrumb li + li:before {
+.breadcrumb li + li:before {
   padding: 8px;
   color: var(--subtitle-color);
   content: "/\00a0";
 }
-ul.breadcrumb li a {
+.breadcrumb li a {
   color: var(--main-color);
   text-decoration: none;
   margin: 0;
@@ -500,7 +500,7 @@ ul.breadcrumb li a {
   text-transform: none;
   font-size: 0.9em;
 }
-ul.breadcrumb li a:hover {
+.breadcrumb li a:hover {
   color: var(--hover-color);
   text-decoration: underline;
 }
@@ -1927,6 +1927,11 @@ p {
     min-height: 123px;
   }
 
+  #main-services-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   /* Benefits */
 
   #benefits-col1 span {
@@ -2142,6 +2147,10 @@ p {
 
   .main-services-card {
     max-width: 270px;
+  }
+  #main-services-section {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   /* Benefits */
