@@ -16,11 +16,13 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -57,8 +59,8 @@
             </div>
             <li><a href="references.html">References</a></li>
             <li><a href="blog.html" class="notdone">Blog</a></li>
-            <li><a href="about.html" class="active">About us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -87,238 +89,138 @@
 
         <li><a href="references.html">References</a></li>
         <li><a href="blog.html" class="notdone">Blog</a></li>
-        <li><a href="about.html" class="active">About us</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </div>
 
     <main>
       <div class="max">
         <section class="hero-section">
-          <h1 class="hero-section-col1">About us</h1>
+          <h1 class="hero-section-col1">Contact</h1>
           <img
             loading="lazy"
             class="hero-section-col2"
-            src="images/Header_about.png"
-            alt="Last trends in digital media world"
+            src="images/thanks1-min.png"
+            alt="Latest trends in digital media world"
           />
         </section>
       </div>
 
-      <!-- Benefits  -->
       <section>
-        <h2>Web agency with all the benefits</h2>
-        <h3>
-          We give your business online visibility and value because your success
-          is our priority.
-        </h3>
-        <div id="benefits-template">
-          <div id="benefits-col1">
-            <ul>
-              <li><i class="fas fa-check-circle"></i>Personal service</li>
-              <li><i class="fas fa-check-circle"></i>Competitive prices</li>
-              <li><i class="fas fa-check-circle"></i>You own the solution</li>
-              <li>
-                <i class="fas fa-check-circle"></i>All services under one roof
-              </li>
-            </ul>
+        <h2>Want to hear more?</h2>
+        <p class="content-services">
+          You are always welcome to contact us for a free and non-binding talk
+          about a new website or if you have any questions regarding our
+          services.
+        </p>
+        <p class="content-services">
+          With many years of experience and plenty successful projects, we are
+          ready to be your preferred digital web agency.
+        </p>
+      </section>
+
+      <section class="products-presentation-section" id="contact-section">
+        <img
+          class="website-presentation-col2"
+          src="images/crunch-owner-Adamf-min.jpg"
+          alt="Adam Kischinovsky, CEO at Crunch"
+        />
+
+        <div class="website-presentation-col3" id="form">
+          <div class="form-group" id="name-group">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder=" "
+              required
+            />
           </div>
 
-          <div id="benefits-col2">
-            <ul>
-              <li><i class="fas fa-check-circle"></i>No hidden fees</li>
-              <li>
-                <i class="fas fa-check-circle"></i>Experience with all
-                industries
-              </li>
-              <li><i class="fas fa-check-circle"></i>Get your unique design</li>
-              <li>
-                <i class="fas fa-check-circle"></i>Opportunity for long-term
-                <span>cooperation</span>
-              </li>
-            </ul>
+          <div class="form-group" id="email-group">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder=" "
+              required
+            />
           </div>
+
+          <div class="form-group" id="phone-group">
+            <label for="phone" class="form-label"> Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-control"
+              placeholder=" "
+              required
+            />
+          </div>
+
+          <div class="form-group" id="message-group">
+            <label for="message" class="form-label">Message</label>
+            <input
+              type="text"
+              id="message"
+              name="message"
+              class="form-control"
+              placeholder=" "
+            />
+          </div>
+
+          <button
+            id="submit-form-btn"
+            type="submit"
+            name="submit"
+            value="SEND MESSAGE"
+            class="send-message-button"
+          >
+            SEND MESSAGE
+          </button>
         </div>
       </section>
 
-      <!-- References  -->
-      <div>
-        <h2>+10 years of experience as digital agenty</h2>
+      <!--Contact information -->
+      <div id="color">
+        <section>
+          <div id="contact-information-wrapper">
+            <article id="contact-information-phone">
+              <h5>Phone</h5>
+              <p><a href="tel:50554097">50554097</a></p>
+            </article>
 
-        <!-- Flickity HTML init -->
-        <div
-          class="carousel"
-          data-flickity='{ "freeScroll": true, "wrapAround": true, "autoPlay": false}'
-        >
-          <div class="carousel-cell">
-            <img
-              loading="lazy"
-              src="images/absalon-folkehuset.jpg"
-              alt="Absalon restaurant website build in WordPress "
-            />
+            <article>
+              <h5>Email</h5>
+              <p>
+                <a href="mailto:crunch@wearecrunch.dk">crunch@wearecrunch.dk</a>
+              </p>
+            </article>
+
+            <article>
+              <h5>Address</h5>
+              <p>
+                <a
+                  href="https://maps.google.com/?q=55.625333, 12.596556"
+                  target="_blank"
+                  >Egensevej 25, 2770 Kastrup</a
+                >
+              </p>
+            </article>
+
+            <article>
+              <h5>Opening hours</h5>
+              <p>Mon - Fri: 8:30 am - 4:00 pm</p>
+            </article>
           </div>
-          <div class="carousel-cell">
-            <img
-              loading="lazy"
-              src="images/gastronomiskinnovation.jpg"
-              alt="Gastronomy website build in WordPress "
-            />
-          </div>
-          <div class="carousel-cell">
-            <img
-              loading="lazy"
-              src="images/lars-gitz.jpg"
-              alt="Architecture website build in WordPress "
-            />
-          </div>
-          <div class="carousel-cell">
-            <img
-              loading="lazy"
-              src="images/wesecure.jpg"
-              alt="Security websites build in WordPress "
-            />
-          </div>
-          <div class="carousel-cell">
-            <img
-              loading="lazy"
-              src="images/frontmonique.jpg"
-              alt="Personal websites build in WordPress "
-            />
-          </div>
-        </div>
+        </section>
       </div>
-
-      <!-- All the services  -->
-      <section>
-        <h2>We are experts in</h2>
-        <div id="allservices-template">
-          <article class="allservices-card">
-            <a class="allservices-card-link" href="websites.html">
-              <img
-                loading="lazy"
-                class="allservices-card-img"
-                src="images/3-hight-quality-website.png"
-                alt="High quality websites "
-              />
-              <h4 class="allservices-card-title">Website</h4>
-              <p class="allservices-card-description">
-                Professional and responsive websites created in WordPress
-              </p>
-            </a>
-          </article>
-
-          <article class="allservices-card">
-            <a class="allservices-card-link" href="graphicdesign.html">
-              <img
-                loading="lazy"
-                class="allservices-card-img"
-                src="images/3-graphic-elements.png"
-                alt="High quality graphic elements"
-              />
-              <h4 class="allservices-card-title">Graphic Design</h4>
-              <p class="allservices-card-description">
-                Professional logo and graphic elements
-              </p>
-            </a>
-          </article>
-
-          <article class="allservices-card">
-            <a class="allservices-card-link" href="onlinemarketing.html#seo">
-              <img
-                loading="lazy"
-                class="allservices-card-img"
-                src="images/3-seo-strategy-min.png"
-                alt=" Optimize online visibility on the website with SEO"
-              />
-              <h4 class="allservices-card-title">SEO</h4>
-              <p class="allservices-card-description">
-                Optimizing your website's online visibility
-              </p>
-            </a>
-          </article>
-
-          <article class="allservices-card">
-            <a class="allservices-card-link" href="onlinemarketing.html#ads">
-              <img
-                loading="lazy"
-                class="allservices-card-img"
-                src="images/3-google-ads-advertise-min.png"
-                alt="Advertising on Google Ads"
-              />
-              <h4 class="allservices-card-title">Google Ads</h4>
-              <p class="allservices-card-description">
-                Advertising to your target group using the right keywords
-              </p>
-            </a>
-          </article>
-
-          <article class="allservices-card">
-            <a
-              class="allservices-card-link"
-              href="onlinemarketing.html#facebook"
-            >
-              <img
-                loading="lazy"
-                class="allservices-card-img"
-                src="images/3-facebook-advertise-min.png"
-                alt="Advertising on Facebook"
-              />
-              <h4 class="allservices-card-title">Facebook Advertise</h4>
-              <p class="allservices-card-description">
-                Advertising via the most used social media channel
-              </p>
-            </a>
-          </article>
-
-          <article class="allservices-card">
-            <a
-              class="allservices-card-link"
-              href="onlinemarketing.html#linkedin"
-            >
-              <img
-                loading="lazy"
-                class="allservices-card-img"
-                src="images/3-linkedin-advertise-min.png"
-                alt="Advertising on LinkedIn"
-              />
-              <h4 class="allservices-card-title">LinkedIn Advertise</h4>
-              <p class="allservices-card-description">
-                Advertising via the world's largest professional network
-              </p>
-            </a>
-          </article>
-
-          <article class="allservices-card">
-            <a class="allservices-card-link" href="websites.html#host">
-              <img
-                loading="lazy"
-                class="allservices-card-img"
-                src="images/3-hosting-min.png"
-                alt="Host service"
-              />
-              <h4 class="allservices-card-title">Hosting</h4>
-              <p class="allservices-card-description">
-                We provide web hosting and take care of it
-              </p>
-            </a>
-          </article>
-
-          <article class="allservices-card">
-            <a class="allservices-card-link" href="support.html">
-              <img
-                loading="lazy"
-                class="allservices-card-img"
-                src="images/3-support-min.png"
-                alt="Support for the website"
-              />
-              <h4 class="allservices-card-title">Support</h4>
-              <p class="allservices-card-description">
-                Help with different tasks related to our services
-              </p>
-            </a>
-          </article>
-        </div>
-      </section>
 
       <!-- Testimonial slider  -->
       <section id="slider-wrapper-testimonial">
@@ -491,6 +393,5 @@
     </button>
 
     <script src="script.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>

@@ -200,7 +200,8 @@ function invalidateInput(
 
     input.style.backgroundPositionX = "96%";
     input.style.backgroundPositionY = "50%";
-    input.style.borderColor = "#ff99a5";
+    input.style.borderColor = "red";
+    input.style.marginBottom = "5px";
     input.style.backgroundSize = "20px 20px";
     input.style.backgroundRepeat = "no-repeat";
     input.style.backgroundImage = "url(images/exclamation-mark.png)";
@@ -260,10 +261,11 @@ function appendError(item, errorMessage) {
 
   const errorDiv = document.createElement("DIV");
   errorDiv.className = "errorDiv";
-  errorDiv.style.backgroundColor = "#ff99a5";
+  errorDiv.style.color = "red";
   errorDiv.style.width = "90%";
-  errorDiv.style["text-align"] = "center";
+  errorDiv.style["text-align"] = "left";
   errorDiv.style.margin = "auto";
+  errorDiv.style.marginBottom = "1.2em";
 
   errorDiv.innerHTML = errorMessage;
   item.appendChild(errorDiv);
@@ -280,7 +282,7 @@ function removeError(item) {
 }
 
 const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{2,4}$/;
 
 // Attaching on input events form each
 function initializeFormEvents() {
