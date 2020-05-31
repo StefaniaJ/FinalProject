@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", start);
 
 // References page
 const main = document.querySelector("#references-wrapper");
+const loadingDiv = document.querySelector("#loading-div");
 const template = document.querySelector("#template-references").content;
 const menu = document.getElementById("buttons-wrapper");
 const allLink = document.querySelector("#all");
@@ -60,6 +61,7 @@ function showData(data) {
 // Filter Websites
 websitesLink.addEventListener("click", () => {
   main.innerHTML = "";
+  loadingDiv.innerHTML = "";
   createLoadingIndicator();
   fetch(link)
     .then((e) => e.json())
@@ -74,6 +76,7 @@ loadJSON(link);
 // Filter Graphics
 graphicsLink.addEventListener("click", () => {
   main.innerHTML = "";
+  loadingDiv.innerHTML = "";
   createLoadingIndicator();
   fetch(link)
     .then((e) => e.json())
@@ -86,6 +89,7 @@ graphicsLink.addEventListener("click", () => {
 
 allLink.addEventListener("click", () => {
   main.innerHTML = "";
+  loadingDiv.innerHTML = "";
   createLoadingIndicator();
   loadJSON(link);
 });
@@ -117,7 +121,7 @@ function createLoadingIndicator() {
   let createImage = document.createElement("img");
   createImage.setAttribute("id", "loading");
   createImage.src = LOADING_IMAGE;
-  main.appendChild(createImage);
+  loadingDiv.appendChild(createImage);
   // Get a reference to the loading indidator
   loadingIndicator = document.getElementById("loading");
 }
