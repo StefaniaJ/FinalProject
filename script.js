@@ -33,16 +33,6 @@ mobileClose.addEventListener("click", function () {
     navigation.style.transform = "translateX(-10%)";
     navigation.style.transition = "transform 0.2s ease-out";
   }
-  //  else {
-  //   navigation.style.transform = "translateX(-100%)";
-  //   navigation.style.transition = "transform 0.2s ease-out";
-  // }
-
-  // if (toggleIcon.className != "menuIconWrapper toggle") {
-  //   toggleIcon.className += " toggle";
-  // } else {
-  //   toggleIcon.className = "menuIconWrapper";
-  // }
 });
 
 // Loop through all dropdown buttons to toggle between hiding and showing its dropdown content
@@ -51,12 +41,6 @@ let dropdown = document.getElementsByClassName("dropdown-btn");
 let i;
 
 for (i = 0; i < dropdown.length; i++) {
-  // let value = navigation.innerHTML;
-  // console.log(value);
-  // if (value.indexOf("Services") !== -1) {
-  //   break;
-  // }
-
   dropdown[i].addEventListener("click", function () {
     this.classList.toggle("active");
     let dropdownContent = this.nextElementSibling;
@@ -414,3 +398,18 @@ submitBtn.addEventListener("click", () => {
       console.log(i);
     });
 });
+
+// When the user scrolls the page, execute myFunction
+// Inspiration: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_indicator
+window.onscroll = function () {
+  myFunction();
+};
+
+function myFunction() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
