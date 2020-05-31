@@ -403,7 +403,11 @@ submitBtn.addEventListener("click", () => {
       return e.json();
     })
     .then((data) => {
-      window.location.href = "index.html";
+      // window.location.href = "index.html";
+      // document.querySelector("#title").innerHTML = "THANK YOU!";
+      document.querySelector("#form").style.display = "none";
+      document.querySelector(".hide").style.display = "block";
+
       console.log(data);
     })
     .catch((i) => {
