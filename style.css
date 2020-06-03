@@ -29,6 +29,11 @@ body {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 0px; /* scrollbar width */
+  background: transparent; /* visibility */
+}
+
 @-webkit-keyframes autofill {
   to {
     color: #666;
@@ -955,7 +960,6 @@ nav li a.active:after,
 }
 
 .carousel-cell {
-  width: 100%;
   height: 250px;
   margin-right: 10px;
   border-radius: 5px;
@@ -966,13 +970,6 @@ nav li a.active:after,
 
 .flickity-page-dots {
   display: none;
-}
-
-@media screen and (min-width: 770px) {
-  .carousel-cell {
-    width: 50%;
-    display: unset;
-  }
 }
 
 .carousel-cell:before {
@@ -989,7 +986,6 @@ nav li a.active:after,
 
 /************ All services  *************** */
 section {
-  /* width: 990px; */
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
