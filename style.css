@@ -3,7 +3,7 @@
   --main-color: #f3601d;
   --hover-color: #f25314;
   --subtitle-color: #212b35;
-  --text-color: #595959;
+  --text-color: #080707;
   --body-color: #f8f8f8;
   --white-color: #fff;
   --blue-color: #2b58be;
@@ -27,6 +27,36 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+#trust-section-logo {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 1.4em;
+  padding-bottom: 1.4em;
+}
+
+#trust-section-logo img {
+  width: 80px;
+  margin-left: 10px;
+}
+
+#col2-logos,
+#col1-logos {
+  display: inline-block;
+}
+
+#col2-logos img,
+#col1-logos img {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#col2-logos img:nth-child(2),
+#col1-logos img:first-child {
+  width: 40px;
 }
 
 @-webkit-keyframes autofill {
@@ -59,7 +89,12 @@ input:-webkit-autofill {
 
 .max {
   width: 100%;
-  background-color: #fdf7f2;
+  background-color: var(--body-color);
+}
+
+.max-logo {
+  width: 100%;
+  background-color: #f1f1f1;
 }
 
 /* Progress bar*/
@@ -577,12 +612,13 @@ nav li a.active:after,
 #title-homepage {
   text-align: left;
   font-size: 2em;
+
   text-transform: none;
 }
 
 .first-section {
   margin-top: 4em;
-  background-color: #fdf7f2;
+  background-color: var(--body-color);
 }
 
 .first-section p {
@@ -612,7 +648,7 @@ nav li a.active:after,
   margin: 0 auto;
   margin-bottom: 2em;
   transition: all 0.3s;
-  margin-top: 3em;
+  margin-top: 2em;
   font-size: 1.2em;
 }
 
@@ -1070,7 +1106,7 @@ p {
 /* ********************************************* SERVICES  ************************************* */
 .hero-section {
   padding-top: 4em;
-  background-color: #fdf7f2;
+  background-color: var(--body-color);
 }
 
 .products-presentation-section img {
@@ -1438,7 +1474,7 @@ p {
 
 .example-references-section img {
   display: block;
-  max-width: 50% !important;
+  max-width: 100% !important;
   margin: 0 auto;
 }
 
@@ -1752,7 +1788,7 @@ p {
   /* HOME PAE */
 
   #title-homepage {
-    font-size: 2em;
+    font-size: 2.2em;
   }
   h1 {
     font-size: 3em;
@@ -1790,6 +1826,16 @@ p {
 
 @media only screen and (min-width: 650px) {
   /* HOME PAE */
+
+  /* Logo */
+  #trust-section-logo img {
+    width: 89px;
+  }
+
+  #col2-logos img:nth-child(2),
+  #col1-logos img:first-child {
+    width: 50px;
+  }
 
   /* Price */
   .price-wrapper {
@@ -1895,6 +1941,10 @@ p {
     line-height: 1.4;
   }
 
+  #title-homepage {
+    font-size: 2.5em;
+  }
+
   #footer-wrapper {
     width: 750px;
     margin-left: auto;
@@ -1922,6 +1972,17 @@ p {
   .button-contact {
     margin: 0;
     margin-bottom: 0;
+  }
+
+  /* Logo */
+  #trust-section-logo {
+    /* text-align: unset; */
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  #trust-section-logo img {
+    margin-left: 20px;
   }
 
   /* Main services */
@@ -2141,10 +2202,23 @@ p {
     line-height: 1.4;
   }
 
+  #title-homepage {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+  }
+
   /* HOME page */
+  #trust-section-logo img {
+    margin-left: 3.5em;
+  }
+
+  #col2-logos img,
+  #col1-logos img {
+    margin-right: 1em;
+  }
 
   .button-contact {
-    margin-top: 3em;
+    margin-top: 2em;
   }
 
   /* Main service */
