@@ -21,7 +21,7 @@ body {
   font-family: var(--fonts-sans);
   scroll-behavior: smooth;
   line-height: 1.6em;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 * {
   box-sizing: border-box;
@@ -33,7 +33,6 @@ body {
   width: 0px; /* scrollbar width */
   background: transparent; /* visibility */
 }
-
 @-webkit-keyframes autofill {
   to {
     color: #666;
@@ -70,6 +69,10 @@ input:-webkit-autofill {
 .max-logo {
   width: 100%;
   background-color: #f1f1f1;
+}
+
+#loading {
+  margin-top: 3em;
 }
 
 /* Progress bar*/
@@ -984,6 +987,14 @@ nav li a.active:after,
   width: 397px;
 }
 
+#slider-projects-wrapper .button-read {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 2em;
+  font-size: 1em;
+}
+
 /************ All services  *************** */
 section {
   margin-left: auto;
@@ -1472,9 +1483,9 @@ p {
   color: white;
 }
 
-/* .loading-btn{
+.loading-btn {
   display: none;
-} */
+}
 
 #map {
   height: 400px;
@@ -1848,6 +1859,10 @@ p {
   #slider-projects-wrapper {
     padding-bottom: 4em;
     padding-top: 4em;
+  }
+
+  #slider-projects-wrapper .button-read {
+    font-size: 1.2em;
   }
   /* HOME PAE */
 
