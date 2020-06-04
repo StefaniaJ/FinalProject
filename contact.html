@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Final Project - Multimedia Design" />
-    <title>Final Exam</title>
+    <meta
+      name="description"
+      content="Crunch - A personalized support in your journey looking forward to your success. We ensure you quality and professionalism. "
+    />
+    <title>
+      Crunch - Websites, Online Marketing and Graphic Elements | Custom and
+      personal digital experience
+    </title>
     <link
       rel="icon"
       type="image/png"
@@ -67,6 +73,10 @@
             <li><a href="about.html">About us</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
         </div>
       </nav>
       <ul class="breadcrumb">
@@ -345,6 +355,93 @@
         </button>
       </section>
 
+      <section>
+        <div id="form1">
+          <div class="form-group" id="name-group1">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              id="name1"
+              name="name"
+              class="form-control"
+              placeholder=" "
+              required
+            />
+          </div>
+
+          <div class="form-group" id="email-group1">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email1"
+              name="email"
+              class="form-control"
+              placeholder=" "
+              required
+            />
+          </div>
+
+          <div class="form-group" id="phone-group1">
+            <label for="phone" class="form-label"> Phone</label>
+            <input
+              type="tel"
+              id="phone1"
+              name="phone"
+              class="form-control"
+              placeholder=" "
+              required
+            />
+          </div>
+
+          <button
+            id="submit-form-btn1"
+            type="submit"
+            name="submit"
+            value="SEND MESSAGE"
+            class="send-message-button"
+          >
+            <i class="fa fa-circle-o-notch fa-spin loading-btn"></i>
+            SEND MESSAGE
+          </button>
+        </div>
+
+        <div class="products-presentation-col3 hide">
+          <h2>Thank you for your message!</h2>
+          <p class="content-services">
+            Pleasa know once you've submited the information, it could take up
+            to 24 hours for me to respond. I appreciate your patience, and I
+            look forward to helping you.
+          </p>
+          <p class="content-services">
+            You may also visit us back using this social media platforms:
+          </p>
+
+          <a
+            href="https://www.facebook.com/wearecrunch"
+            target="_blank"
+            aria-label="Crunch Facebook page"
+          >
+            <i class="fab fa-facebook-square"></i
+          ></a>
+
+          <a
+            href="https://www.instagram.com/wearecrunchdk/"
+            target="_blank"
+            aria-label="Crunch Instagram page"
+          >
+            <i class="fab fa-instagram"></i
+          ></a>
+
+          <a
+            href="https://www.linkedin.com/company/crunchivs/"
+            target="_blank"
+            aria-label="Crunch LinkedIn page"
+          >
+            <i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </section>
+
       <!--Fixed buttons-->
       <div class="contact-buttons-wrapper">
         <button id="message-button">
@@ -457,6 +554,7 @@
       // This event initialez out event listeners after document is loaded, this way we are making sure that elements are actually there when we are trying to attach event listeners to them
       window.onload = function () {
         validateForm("form");
+        validateForm("form1");
       };
 
       // Initialize and add the map
