@@ -1325,6 +1325,7 @@ p {
 .buttons-menu.active {
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s ease;
+  background-color: #dedcdc;
 }
 
 #references-wrapper {
