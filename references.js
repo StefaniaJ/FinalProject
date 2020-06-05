@@ -11,7 +11,7 @@ const graphicsLink = document.querySelector("#graphics");
 const article = document.querySelector(".link-btn");
 const LOADING_IMAGE = "images/loading.gif";
 const link =
-  "https://spreadsheets.google.com/feeds/list/1o1okTGFAMCRxodaTFQbERyFNYnITnpmdGpbW62YnBCU/od6/public/values?alt=json";
+  "https://spreadsheets.google.com/feeds/list/1Vzl0-Sl0Dr6MCb7fVf9L5azOK9U-ENq57yrIidGFBVg/od6/public/values?alt=json";
 
 // Fetch data from Google Sheets as JSON for Crunch Website
 
