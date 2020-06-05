@@ -112,10 +112,6 @@
             <li><a href="contact.html" title="Contact">Contact</a></li>
           </ul>
         </div>
-
-        <div class="progress-container">
-          <div class="progress-bar" id="myBar"></div>
-        </div>
       </nav>
     </header>
 
@@ -328,11 +324,106 @@
       <!-- CTA Section  -->
       <div class="max">
         <section class="cta-section">
-          <h2>Get advice and a non-binding talk</h2>
-          <h3><a href="tel:50554097">+45 50554097</a></h3>
-          <h3>
-            <a href="mailto:crunch@wearecrunch.dk">crunch@wearecrunch.dk</a>
-          </h3>
+          <div id="form1">
+            <div id="cta-title">
+              <h2>Get advice and a non-binding talk</h2>
+              <h3><a href="tel:50554097">+45 50554097</a></h3>
+              <h3 id="cta-mail">
+                <a href="mailto:crunch@wearecrunch.dk">crunch@wearecrunch.dk</a>
+              </h3>
+            </div>
+            <div class="form-group" id="name-group1">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                id="name1"
+                name="name"
+                class="form-control"
+                placeholder=" "
+                required
+              />
+            </div>
+
+            <div class="form-group" id="email-group1">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email1"
+                name="email"
+                class="form-control"
+                placeholder=" "
+                required
+              />
+            </div>
+
+            <div class="form-group" id="phone-group1">
+              <label for="phone" class="form-label"> Phone</label>
+              <input
+                type="tel"
+                id="phone1"
+                name="phone"
+                class="form-control"
+                placeholder=" "
+                required
+              />
+            </div>
+
+            <button
+              id="submit-form-btn1"
+              type="submit"
+              name="submit"
+              value="SEND MESSAGE"
+              class="send-message-button"
+            >
+              <i class="fa fa-circle-o-notch fa-spin loading-btn"></i>
+              BOOK MEETING
+            </button>
+          </div>
+
+          <div class="cta-section hide">
+            <img
+              src="images/thanks.png"
+              loading="lazy"
+              alt="Thank you for your trust"
+            />
+            <h2>Thank you for your message!</h2>
+            <p class="content-services">
+              Pleasa know once you've submited the information, it could take up
+              to 24 hours for me to respond. I appreciate your patience, and I
+              look forward to helping you.
+            </p>
+            <p class="content-services">
+              You may also visit us back using this social media platforms:
+            </p>
+            <div id="social-media-contact-wrapper">
+              <a
+                title="Facebook Page"
+                href="https://www.facebook.com/wearecrunch"
+                target="_blank"
+                aria-label="Crunch Facebook page"
+              >
+                <i class="fab fa-facebook-square"></i
+              ></a>
+
+              <a
+                href="https://www.instagram.com/wearecrunchdk/"
+                title="Instagram Page"
+                target="_blank"
+                aria-label="Crunch Instagram page"
+              >
+                <i class="fab fa-instagram"></i
+              ></a>
+
+              <a
+                href="https://www.linkedin.com/company/crunchivs/"
+                title="LinkedIn Page"
+                target="_blank"
+                aria-label="Crunch LinkedIn page"
+              >
+                <i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
         </section>
       </div>
 
@@ -544,6 +635,25 @@
           </a>
         </button>
       </div>
+
+         <!-- Contact person  -->
+      <section id="contact-person">
+        <div>
+        <h2>Meet our contact person</h2>
+        <p class="content-services">With a background of more then 10 years of experience, my first priority is to listen and take care of your needs and assist you through the process of boosting your business.</p>
+        <button class="button-read">
+          <a href="about.html" aria-label="Meet our contact person"
+            >Read more <i class="fas fa-arrow-right"></i>
+          </a>
+        </button>
+      </div>
+
+        <img
+                loading="lazy"
+                src="images/contact-person.png"
+                alt="Adam, the owner of the company "
+            /></a>
+      </section>
 
       <!-- All the services  -->
       <section>
@@ -762,12 +872,15 @@
           </p>
         </div>
 
+        <div class="products-presentation-col2">
         <img
           loading="lazy"
           class="products-presentation-col2"
-          src="images/crunch-owner-Adamf-min.jpg"
+          src="images/Adam1.jpg"
           alt="Adam Kischinovsky, CEO at Crunch"
         />
+        <p >Adam Kischinovsky, CEO</p>
+      </div>
 
         <div class="products-presentation-col3" id="form">
           <div class="form-group" id="name-group">
@@ -842,6 +955,8 @@
 
           <a
             href="https://www.facebook.com/wearecrunch"
+            class="social-icons-contact"
+            title="Facebook Page"
             target="_blank"
             aria-label="Crunch Facebook page"
           >
@@ -850,6 +965,8 @@
 
           <a
             href="https://www.instagram.com/wearecrunchdk/"
+            class="social-icons-contact"
+            title="Instagram Page"
             target="_blank"
             aria-label="Crunch Instagram page"
           >
@@ -858,6 +975,8 @@
 
           <a
             href="https://www.linkedin.com/company/crunchivs/"
+            class="social-icons-contact"
+            title="LinkedIn Page"
             target="_blank"
             aria-label="Crunch LinkedIn page"
           >
@@ -877,6 +996,7 @@
           <a href="tel:50554097"> <i class="fas fa-phone"></i> Call Adam</a>
         </button>
       </div>
+      
     </main>
 
     <footer>
@@ -964,13 +1084,17 @@
     </button>
 
     <script src="script.js"></script>
+    <script src="formValidation.js"></script>
     <script src="price.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="testimonials.js"></script>
 
     <script>
       // This event initialez out event listeners after document is loaded, this way we are making sure that elements are actually there when we are trying to attach event listeners to them
-      window.onload = initializeFormEvents;
+      window.onload = function () {
+        validateForm("form");
+        validateForm("form1");
+      };
     </script>
   </body>
 </html>

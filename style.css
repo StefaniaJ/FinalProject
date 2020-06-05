@@ -21,7 +21,7 @@ body {
   font-family: var(--fonts-sans);
   scroll-behavior: smooth;
   line-height: 1.6em;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 * {
   box-sizing: border-box;
@@ -29,14 +29,10 @@ body {
   padding: 0;
 }
 
-::-webkit-scrollbar {
-  width: 0px; /* scrollbar width */
-  background: transparent; /* visibility */
-}
 @-webkit-keyframes autofill {
   to {
     color: #666;
-    background-image: url(images/verified.png) !important;
+    background-image: url(images/verified.jpg) !important;
   }
 }
 input:-webkit-autofill {
@@ -46,7 +42,11 @@ input:-webkit-autofill {
 input:-webkit-autofill {
   -webkit-box-shadow: inset 0 0 0px 9999px white;
   /*transition: background-color 5000s ease-in-out 0s;*/
-  background-image: url(images/verified.png) !important;
+  background-image: url(images/verified.jpg) !important;
+}
+
+input:focus {
+  box-shadow: 0 2px 8px hsla(0, 0%, 42%, 0.4);
 }
 
 .hide {
@@ -73,19 +73,6 @@ input:-webkit-autofill {
 
 #loading {
   margin-top: 3em;
-}
-
-/* Progress bar*/
-.progress-container {
-  width: 100%;
-  height: 8px;
-  background: #ccc;
-}
-
-.progress-bar {
-  height: 8px;
-  background: #4caf50;
-  width: 0%;
 }
 
 .flickity-prev-next-button .flickity-button-icon {
@@ -362,7 +349,7 @@ nav li a.active:after,
 
 /********* Responsive Mobile Menu *********/
 .mobile-menu-wrapper {
-  background-color: #fbe8d8;
+  background-color: var(--body-color);
   color: var(--text-color);
   justify-content: center;
   position: fixed;
@@ -778,23 +765,37 @@ nav li a.active:after,
 
 .cta-section {
   background-color: var(--body-color);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.cta-section img {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
 }
 
 .cta-section h3 {
-  margin-bottom: 0.3em;
-  font-weight: 400;
+  margin-bottom: 0.4em;
+  font-weight: 500;
+  font-size: 1.4em;
 }
 
 .cta-section h3 a {
   text-decoration: none;
   color: var(--subtitle-color);
   transition: color 0.3s ease;
-  margin-bottom: 0.3em;
 }
 
 .cta-section h3 a:hover {
   text-decoration: underline;
   color: var(--main-color);
+}
+
+#cta-mail {
+  margin-bottom: 1.5em;
 }
 
 /************ Process  *************** */
@@ -994,6 +995,14 @@ nav li a.active:after,
   margin-top: 2em;
   font-size: 1em;
 }
+/************ Contact Person *************** */
+#contact-person img {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-top: 1em;
+  margin-right: auto;
+}
 
 /************ All services  *************** */
 section {
@@ -1159,6 +1168,25 @@ section {
 
 p {
   font-size: 1em;
+}
+
+#social-media-contact-wrapper {
+  text-align: center;
+}
+
+#social-media-contact-wrapper a {
+  color: var(--main-color);
+  font-size: 2.5em;
+  margin-right: 0.3em;
+}
+
+#social-media-contact-wrapper a:hover {
+  color: var(--hover-color);
+}
+
+#contact-section .products-presentation-col2 p {
+  margin-bottom: 2em;
+  margin-left: 0.5em;
 }
 
 /* ********************************************* SERVICES  ************************************* */
@@ -1395,10 +1423,12 @@ p {
   padding: 1.3rem 1.2rem;
   font-size: 0.9rem;
   width: 90%;
-  margin: 0 auto;
+
   margin-bottom: 15px;
   border: 1px solid #e4e3e3;
   border-radius: 2px;
+  max-width: 450px;
+  margin-left: 0;
 }
 
 .form-group {
@@ -1422,7 +1452,7 @@ p {
 
 /* Text -inside */
 .form-label {
-  padding-left: 20px;
+  padding-left: 9px;
 }
 
 /* ///////////VALITATION START ////////*/
@@ -1471,12 +1501,10 @@ p {
   font-weight: 700;
   font-size: 17px;
   letter-spacing: 0;
-  margin-left: 21px;
   line-height: 1;
   text-align: center;
   box-shadow: 0 2px 8px hsla(0, 0%, 42%, 0.4);
-  /* transition: box-shadow 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955),
-    transform 0.13s cubic-bezier(0.455, 0.03, 0.515, 0.955); */
+  margin-top: 30px;
 }
 
 .send-message-button i {
@@ -1738,6 +1766,14 @@ p {
     height: 450px;
   }
 
+  #contact-section .products-presentation-col2 p {
+    text-align: center;
+    margin-right: 5em;
+  }
+  #contact-section .products-presentation-col2 img {
+    width: 260px;
+  }
+
   /* SERVICES - WEBSITE PAGE */
   .products-presentation-section img {
     width: 70%;
@@ -1794,6 +1830,11 @@ p {
     height: 380px;
   }
 
+  /* Contact person */
+  #contact-person img {
+    width: 300px;
+  }
+
   /* SERVICES PAGES */
   .hero-section {
     display: grid;
@@ -1839,10 +1880,6 @@ p {
 }
 
 @media only screen and (min-width: 606px) {
-  /* h1 {
-    font-size: 2.44em;
-  } */
-
   section {
     padding-bottom: 4em;
     padding-top: 4em;
@@ -1900,6 +1937,9 @@ p {
   /* Testimonial slider */
   #slider-wrapper-testimonial {
     height: 350px;
+  }
+  #contact-section .products-presentation-col2 p {
+    text-align: center;
   }
 }
 
@@ -2104,6 +2144,36 @@ p {
   #next {
     right: 0rem;
   }
+  /*////////// Contact person ///////////// */
+  #contact-person .button-read a {
+    margin-left: 2.6em;
+  }
+
+  #contact-section .products-presentation-col2 img {
+    width: 87%;
+  }
+
+  .content-services {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /*////////// FORM ///////////// */
+  .cta-section .form-group input {
+    margin: 0 auto;
+  }
+
+  /* Text -inside */
+  .cta-section .form-label {
+    padding-left: 8.5em;
+  }
+  .cta-section .send-message-button {
+    margin-left: 7em;
+  }
+
+  .errorDiv {
+    margin-left: 8.4em;
+  }
 
   /* SERVICES PAGES */
 
@@ -2246,7 +2316,8 @@ p {
     grid-row: 1/2;
   }
 
-  #contact-section .products-presentation-col2 {
+  #contact-section .products-presentation-col2,
+  #adam {
     grid-column: 1/2;
     grid-row: 2/3;
     align-self: end;
@@ -2269,9 +2340,33 @@ p {
 }
 
 @media (min-width: 880px) {
-  /* breadcrumb */
+  /* Breadcrumb */
   ul.breadcrumb {
     padding-left: 54px;
+  }
+
+  #contact-person {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #contact-person div {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  #contact-person img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0;
+  }
+  #contact-person .button-read a {
+    margin-left: 0;
+  }
+
+  #contact-person h2 {
+    text-align: left;
+    margin-top: 1em;
   }
 }
 
@@ -2340,6 +2435,10 @@ p {
   #process-template {
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   }
+  /* Contact person */
+  #contact-person {
+    grid-template-columns: 1fr 587px;
+  }
 
   /* All services */
   #allservices-template {
@@ -2347,6 +2446,59 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   }
 
+  /* CTA section */
+  .cta-section img {
+    width: 60%;
+  }
+  .cta-section {
+    width: 94%;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  #form1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 202px;
+  }
+
+  #cta-title {
+    grid-column: 1/5;
+    grid-row: 1/2;
+  }
+  #name-group1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  #email-group1 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  #phone-group1 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  #submit-form-btn1 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+    margin-top: 25px;
+    padding: 1.2rem 1.2rem;
+    max-height: 62px;
+    max-width: 201px;
+    margin-left: 1em;
+  }
+
+  .cta-section .form-label {
+    padding-left: 1.4em;
+  }
+
+  .errorDiv {
+    margin-left: 1.2em;
+  }
+
+  .cta-section h3 {
+    margin-bottom: 0.6em;
+    font-size: 1.6em;
+  }
   /* SERVICES PAGES */
 
   .products-presentation-section img {
