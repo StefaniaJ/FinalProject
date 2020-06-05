@@ -145,7 +145,7 @@
         <img
           loading="lazy"
           class="products-presentation-col2"
-          src="images/crunch-owner-Adamf-min.jpg"
+          src="images/Adam1.jpg"
           alt="Adam Kischinovsky, CEO at Crunch"
         />
 
@@ -281,9 +281,6 @@
         </section>
       </div>
 
-      <!--The div element for the map -->
-      <div id="map"></div>
-
       <!-- Testimonial slider  -->
       <section id="slider-wrapper-testimonial">
         <div class="slide-testimonial showing">
@@ -355,93 +352,6 @@
         >
           <i class="fas fa-chevron-right"></i>
         </button>
-      </section>
-
-      <section>
-        <div id="form1">
-          <div class="form-group" id="name-group1">
-            <label for="name" class="form-label">Name</label>
-            <input
-              type="text"
-              id="name1"
-              name="name"
-              class="form-control"
-              placeholder=" "
-              required
-            />
-          </div>
-
-          <div class="form-group" id="email-group1">
-            <label for="email" class="form-label">Email</label>
-            <input
-              type="email"
-              id="email1"
-              name="email"
-              class="form-control"
-              placeholder=" "
-              required
-            />
-          </div>
-
-          <div class="form-group" id="phone-group1">
-            <label for="phone" class="form-label"> Phone</label>
-            <input
-              type="tel"
-              id="phone1"
-              name="phone"
-              class="form-control"
-              placeholder=" "
-              required
-            />
-          </div>
-
-          <button
-            id="submit-form-btn1"
-            type="submit"
-            name="submit"
-            value="SEND MESSAGE"
-            class="send-message-button"
-          >
-            <i class="fa fa-circle-o-notch fa-spin loading-btn"></i>
-            SEND MESSAGE
-          </button>
-        </div>
-
-        <div class="products-presentation-col3 hide">
-          <h2>Thank you for your message!</h2>
-          <p class="content-services">
-            Pleasa know once you've submited the information, it could take up
-            to 24 hours for me to respond. I appreciate your patience, and I
-            look forward to helping you.
-          </p>
-          <p class="content-services">
-            You may also visit us back using this social media platforms:
-          </p>
-
-          <a
-            href="https://www.facebook.com/wearecrunch"
-            target="_blank"
-            aria-label="Crunch Facebook page"
-          >
-            <i class="fab fa-facebook-square"></i
-          ></a>
-
-          <a
-            href="https://www.instagram.com/wearecrunchdk/"
-            target="_blank"
-            aria-label="Crunch Instagram page"
-          >
-            <i class="fab fa-instagram"></i
-          ></a>
-
-          <a
-            href="https://www.linkedin.com/company/crunchivs/"
-            target="_blank"
-            aria-label="Crunch LinkedIn page"
-          >
-            <i class="fab fa-linkedin-in"></i
-          ></a>
-        </div>
       </section>
 
       <!--Fixed buttons-->
@@ -543,34 +453,11 @@
 
     <script src="script.js"></script>
     <script src="formValidation.js"></script>
-
-    <!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
-
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDklbfAKttYdMX9QEh82Y-CDTso-WXu2zk&callback=initMap"
-    ></script>
-
     <script>
       // This event initialez out event listeners after document is loaded, this way we are making sure that elements are actually there when we are trying to attach event listeners to them
       window.onload = function () {
         validateForm("form");
-        validateForm("form1");
       };
-
-      // Initialize and add the map
-      function initMap() {
-        // The location of Uluru
-        var uluru = { lat: 55.62525, lng: 12.59683 };
-        // The map, centered at Uluru
-        var map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4,
-          center: uluru,
-        });
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({ position: uluru, map: map });
-      }
     </script>
   </body>
 </html>

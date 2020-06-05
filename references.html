@@ -164,13 +164,26 @@
         <!-- The content is inserted dynamically using JavaScript -->
       </div>
 
+      <!-- Form  -->
       <section class="products-presentation-section" id="contact-section">
-        <img
-          loading="lazy"
-          class="products-presentation-col2"
-          src="images/crunch-owner-Adamf-min.jpg"
-          alt="Adam Kischinovsky, CEO at Crunch"
-        />
+        <div class="products-presentation-col1">
+          <h2>Want to hear more?</h2>
+          <p class="content-services">
+            Don’t hesitate to contact us. If you have any questions about our
+            services or if you want to discuss about a new website, we can offer
+            you a free talk with no obligations.
+          </p>
+        </div>
+
+        <div class="products-presentation-col2">
+          <img
+            loading="lazy"
+            class="products-presentation-col2"
+            src="images/Adam1.jpg"
+            alt="Adam Kischinovsky, CEO at Crunch"
+          />
+          <p>Adam Kischinovsky, CEO</p>
+        </div>
 
         <div class="products-presentation-col3" id="form">
           <div class="form-group" id="name-group">
@@ -243,29 +256,34 @@
             You may also visit us back using this social media platforms:
           </p>
 
-          <a
-            href="https://www.facebook.com/wearecrunch"
-            target="_blank"
-            aria-label="Crunch Facebook page"
-          >
-            <i class="fab fa-facebook-square"></i
-          ></a>
+          <div id="social-media-contact-wrapper">
+            <a
+              title="Facebook Page"
+              href="https://www.facebook.com/wearecrunch"
+              target="_blank"
+              aria-label="Crunch Facebook page"
+            >
+              <i class="fab fa-facebook-square"></i
+            ></a>
 
-          <a
-            href="https://www.instagram.com/wearecrunchdk/"
-            target="_blank"
-            aria-label="Crunch Instagram page"
-          >
-            <i class="fab fa-instagram"></i
-          ></a>
+            <a
+              href="https://www.instagram.com/wearecrunchdk/"
+              title="Instagram Page"
+              target="_blank"
+              aria-label="Crunch Instagram page"
+            >
+              <i class="fab fa-instagram"></i
+            ></a>
 
-          <a
-            href="https://www.linkedin.com/company/crunchivs/"
-            target="_blank"
-            aria-label="Crunch LinkedIn page"
-          >
-            <i class="fab fa-linkedin-in"></i
-          ></a>
+            <a
+              href="https://www.linkedin.com/company/crunchivs/"
+              title="LinkedIn Page"
+              target="_blank"
+              aria-label="Crunch LinkedIn page"
+            >
+              <i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
         </div>
       </section>
 
@@ -391,10 +409,14 @@
     </button>
 
     <script src="script.js"></script>
+    <script src="formValidation.js"></script>
     <script src="references.js"></script>
     <script>
       // This event initialez out event listeners after document is loaded, this way we are making sure that elements are actually there when we are trying to attach event listeners to them
-      window.onload = initializeFormEvents;
+      window.onload = function () {
+        validateForm("form");
+        validateForm("form1");
+      };
     </script>
   </body>
 </html>
